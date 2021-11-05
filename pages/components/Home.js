@@ -66,48 +66,12 @@ export default function Homeo() {
                 className="navbar-brand"
                 href="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/html/main/index.html"
               >
-                <b className="logo-icon">
-                  <i className="wi wi-sunset"></i>
+      
 
-                  <img
-                    src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/logo-icon.png"
-                    alt="homepage"
-                    className="dark-logo"
-                  />
-
-                  <img
-                    src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/logo-light-icon.png"
-                    alt="homepage"
-                    className="light-logo"
-                  />
-                </b>
-
-                <span className="logo-text">
-                  <img
-                    src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/logo-text.png"
-                    alt="homepage"
-                    className="dark-logo"
-                  />
-
-                  <img
-                    src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/logo-light-text.png"
-                    className="light-logo"
-                    alt="homepage"
-                  />
-                </span>
+               
               </a>
 
-              <a
-                className="topbartoggler d-block d-md-none waves-effect waves-light"
-                href="javascript:void(0)"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <i data-feather="more-horizontal" className="feather-sm"></i>
-              </a>
+       
             </div>
 
             <div
@@ -456,11 +420,7 @@ export default function Homeo() {
                           "
                           >
                             <span className="user-img position-relative d-inline-block">
-                              <img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                                alt="user"
-                                className="rounded-circle w-100"
-                              />
+                        
                               <span className="profile-status rounded-circle online"></span>
                             </span>
                             <div className="w-75 d-inline-block v-middle ps-3">
@@ -506,11 +466,7 @@ export default function Homeo() {
                           "
                           >
                             <span className="user-img position-relative d-inline-block">
-                              <img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                                alt="user"
-                                className="rounded-circle w-100"
-                              />
+                          
                               <span className="profile-status rounded-circle busy"></span>
                             </span>
                             <div className="w-75 d-inline-block v-middle ps-3">
@@ -553,11 +509,7 @@ export default function Homeo() {
                           "
                           >
                             <span className="user-img position-relative d-inline-block">
-                              <img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                                alt="user"
-                                className="rounded-circle w-100"
-                              />
+                      
                               <span className="profile-status rounded-circle away"></span>
                             </span>
                             <div className="w-75 d-inline-block v-middle ps-3">
@@ -601,11 +553,7 @@ export default function Homeo() {
                           "
                           >
                             <span className="user-img position-relative d-inline-block">
-                              <img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                                alt="user"
-                                className="rounded-circle w-100"
-                              />
+                       
                               <span className="profile-status rounded-circle offline"></span>
                             </span>
                             <div className="w-75 d-inline-block v-middle ps-3">
@@ -676,25 +624,14 @@ export default function Homeo() {
                         >
                           <div className="carousel-inner">
                             <div className="carousel-item active">
-                              <img
-                                className="d-block img-fluid"
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img1.jpg"
-                                alt="First slide"
-                              />
+                           
                             </div>
                             <div className="carousel-item">
-                              <img
-                                className="d-block img-fluid"
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img2.jpg"
-                                alt="Second slide"
-                              />
+                         
+
                             </div>
                             <div className="carousel-item">
-                              <img
-                                className="d-block img-fluid"
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img3.jpg"
-                                alt="Third slide"
-                              />
+                        
                             </div>
                           </div>
                           <a
@@ -949,12 +886,7 @@ export default function Homeo() {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <img
-                      src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                      alt="user"
-                      width="30"
-                      className="profile-pic rounded-circle"
-                    />
+              
                   </a>
                   <div
                     className="
@@ -976,12 +908,7 @@ export default function Homeo() {
                     "
                     >
                       <div className="">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                          alt="user"
-                          className="rounded-circle"
-                          width="60"
-                        />
+                   
                       </div>
                       <div className="ms-2">
                         <h4 className="mb-0 text-white">Steave Jobs</h4>
@@ -1072,10 +999,7 @@ export default function Homeo() {
                   <div className="card-body">
                     <div className="d-flex no-block">
                       <div className="me-3 align-self-center">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/icon/income-w.png"
-                          alt="Income"
-                        />
+                   
                       </div>
                       <div className="align-self-center">
                         <h6 className="text-white mt-2 mb-0">Total Income</h6>
@@ -1090,10 +1014,7 @@ export default function Homeo() {
                   <div className="card-body">
                     <div className="d-flex no-block">
                       <div className="me-3 align-self-center">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/icon/expense-w.png"
-                          alt="Income"
-                        />
+                     
                       </div>
                       <div className="align-self-center">
                         <h6 className="text-white mt-2 mb-0">Total Expense</h6>
@@ -1108,10 +1029,8 @@ export default function Homeo() {
                   <div className="card-body">
                     <div className="d-flex no-block">
                       <div className="me-3 align-self-center">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/icon/assets-w.png"
-                          alt="Income"
-                        />
+                     
+                     
                       </div>
                       <div className="align-self-center">
                         <h6 className="text-white mt-2 mb-0">Total Assets</h6>
@@ -1126,10 +1045,7 @@ export default function Homeo() {
                   <div className="card-body">
                     <div className="d-flex no-block">
                       <div className="me-3 align-self-center">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/icon/staff-w.png"
-                          alt="Income"
-                        />
+                     
                       </div>
                       <div className="align-self-center">
                         <h6 className="text-white mt-2 mb-0">Total Staff</h6>
@@ -1195,11 +1111,7 @@ export default function Homeo() {
               </div>
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div className="card w-100">
-                  <img
-                    className="card-img-top blog-img3"
-                    src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img1.jpg"
-                    alt="Card image cap"
-                  />
+               
                   <div className="card-body">
                     <h3 className="font-weight-normal">
                       Business development of rules 2021
@@ -1421,12 +1333,7 @@ export default function Homeo() {
                     <div className="d-flex flex-row comment-row border-bottom p-3">
                       <div className="p-2">
                         <span className="">
-                          <img
-                            src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                            className="rounded-circle"
-                            alt="user"
-                            width="50"
-                          />
+                    
                         </span>
                       </div>
                       <div className="comment-text w-100 p-3">
@@ -1470,12 +1377,7 @@ export default function Homeo() {
                     <div className="d-flex flex-row comment-row border-bottom active p-3">
                       <div className="p-2">
                         <span>
-                          <img
-                            src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                            className="rounded-circle"
-                            alt="user"
-                            width="50"
-                          />
+                   
                         </span>
                       </div>
                       <div className="comment-text active w-100 p-3">
@@ -1519,12 +1421,7 @@ export default function Homeo() {
                     <div className="d-flex flex-row comment-row border-bottom p-3">
                       <div className="p-2">
                         <span>
-                          <img
-                            src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                            className="rounded-circle"
-                            alt="user"
-                            width="50"
-                          />
+                        
                         </span>
                       </div>
                       <div className="comment-text w-100 p-3">
@@ -1570,12 +1467,7 @@ export default function Homeo() {
                     <div className="d-flex flex-row comment-row p-3">
                       <div className="p-2">
                         <span>
-                          <img
-                            src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                            className="rounded-circle"
-                            alt="user"
-                            width="50"
-                          />
+                     
                         </span>
                       </div>
                       <div className="comment-text w-100 p-3">
@@ -1632,11 +1524,7 @@ export default function Homeo() {
                       <ul className="chat-list m-0 p-0">
                         <li className="mt-4">
                           <div className="chat-img d-inline-block align-top">
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                              alt="user"
-                              className="rounded-circle"
-                            />
+                         
                           </div>
                           <div className="chat-content ps-3 d-inline-block">
                             <h5 className="text-muted fs-3 font-weight-medium">
@@ -1671,11 +1559,7 @@ export default function Homeo() {
                         </li>
                         <li className="mt-4">
                           <div className="chat-img d-inline-block align-top">
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                              alt="user"
-                              className="rounded-circle"
-                            />
+                        
                           </div>
                           <div className="chat-content ps-3 d-inline-block">
                             <h5 className="text-muted fs-3 font-weight-medium">
@@ -1768,11 +1652,7 @@ export default function Homeo() {
 
                         <li className="mt-4">
                           <div className="chat-img d-inline-block align-top">
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                              alt="user"
-                              className="rounded-circle"
-                            />
+                        
                           </div>
                           <div className="chat-content ps-3 d-inline-block">
                             <h5 className="text-muted fs-3 font-weight-medium">
@@ -1807,11 +1687,7 @@ export default function Homeo() {
 
                         <li className="mt-4">
                           <div className="chat-img d-inline-block align-top">
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                              alt="user"
-                              className="rounded-circle"
-                            />
+                       
                           </div>
                           <div className="chat-content ps-3 d-inline-block">
                             <h5 className="text-muted fs-3 font-weight-medium">
@@ -2193,11 +2069,7 @@ export default function Homeo() {
                       data-user-id="1"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                       
                         <span className="profile-status rounded-circle online"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2232,11 +2104,7 @@ export default function Homeo() {
                       data-user-id="2"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                   
                         <span className="profile-status rounded-circle busy"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2263,11 +2131,7 @@ export default function Homeo() {
                       data-user-id="3"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                     
                         <span className="profile-status rounded-circle away"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2302,11 +2166,7 @@ export default function Homeo() {
                       data-user-id="4"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                 
                         <span className="profile-status rounded-circle offline"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2341,11 +2201,7 @@ export default function Homeo() {
                       data-user-id="5"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/5.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                    
                         <span className="profile-status rounded-circle offline"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2380,11 +2236,7 @@ export default function Homeo() {
                       data-user-id="6"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                       
                         <span className="profile-status rounded-circle offline"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2421,11 +2273,7 @@ export default function Homeo() {
                       data-user-id="7"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/7.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                     
                         <span className="profile-status rounded-circle offline"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2460,11 +2308,7 @@ export default function Homeo() {
                       data-user-id="8"
                     >
                       <span className="user-img position-relative d-inline-block">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/8.jpg"
-                          alt="user"
-                          className="rounded-circle w-100"
-                        />
+                      
                         <span className="profile-status rounded-circle offline"></span>
                       </span>
                       <div className="w-75 d-inline-block v-middle ps-2">
@@ -2526,11 +2370,7 @@ export default function Homeo() {
                 </div>
                 <div className="sl-item">
                   <div className="sl-left">
-                    <img
-                      className="rounded-circle"
-                      alt="user"
-                      src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                    />
+                  
                   </div>
                   <div className="sl-right">
                     <div className="font-weight-medium">
@@ -2542,11 +2382,7 @@ export default function Homeo() {
                 </div>
                 <div className="sl-item">
                   <div className="sl-left">
-                    <img
-                      className="rounded-circle"
-                      alt="user"
-                      src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                    />
+               
                   </div>
                   <div className="sl-right">
                     <div>
@@ -2583,11 +2419,7 @@ export default function Homeo() {
                 </div>
                 <div className="sl-item">
                   <div className="sl-left">
-                    <img
-                      className="rounded-circle"
-                      alt="user"
-                      src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                    />
+              
                   </div>
                   <div className="sl-right">
                     <div className="font-weight-medium">
@@ -2599,11 +2431,7 @@ export default function Homeo() {
                 </div>
                 <div className="sl-item">
                   <div className="sl-left">
-                    <img
-                      className="rounded-circle"
-                      alt="user"
-                      src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                    />
+                 
                   </div>
                   <div className="sl-right">
                     <div>
