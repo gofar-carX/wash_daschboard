@@ -119,7 +119,7 @@ export default function Homeo() {
                     className="nav-link dropdown-toggle waves-effect waves-dark"
                     href="#"
                     data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                   
                     aria-expanded="false"
                   >
                     <i data-feather="bell"></i>
@@ -378,7 +378,7 @@ export default function Homeo() {
                     href="#"
                     id="2"
                     data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  
                     aria-expanded="false"
                   >
                     <i data-feather="inbox"></i>
@@ -607,7 +607,7 @@ export default function Homeo() {
                     className="nav-link dropdown-toggle waves-effect waves-dark"
                     href="#"
                     data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                   
                     aria-expanded="false"
                   >
                     <i data-feather="grid"></i>
@@ -853,7 +853,7 @@ export default function Homeo() {
                   "
                     href="#"
                     data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  
                     aria-expanded="false"
                   >
                     <i className="flag-icon flag-icon-us"></i>
@@ -883,7 +883,7 @@ export default function Homeo() {
                     className="nav-link dropdown-toggle waves-effect waves-dark"
                     href="#"
                     data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                
                     aria-expanded="false"
                   >
               
