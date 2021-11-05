@@ -27,7 +27,7 @@ export default function Tables() {
                     <table className="table v-middle no-wrap mb-0">
                       <thead>
                         <tr>
-                          <th className="border-0" colsPan="2">Assigned</th>
+                          <th className="border-0" colSpan="2">Assigned</th>
                           <th className="border-0">Name</th>
                           <th className="border-0">Priority</th>
                         </tr>
