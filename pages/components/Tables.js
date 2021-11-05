@@ -36,12 +36,8 @@ export default function Tables() {
                         <tr>
                           <td style={{width: "50px"}}>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              >
+                                </span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">Sunil Joshi</h6>
@@ -57,12 +53,7 @@ export default function Tables() {
                         <tr className="active">
                           <td>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              ></span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">Andrew</h6>
@@ -78,12 +69,8 @@ export default function Tables() {
                         <tr>
                           <td>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              >
+                                </span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">
@@ -101,12 +88,7 @@ export default function Tables() {
                         <tr>
                           <td>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              ></span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">Nirav Joshi</h6>
@@ -122,12 +104,8 @@ export default function Tables() {
                         <tr>
                           <td>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/5.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              >
+                                </span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">Micheal Doe</h6>
@@ -143,12 +121,8 @@ export default function Tables() {
                         <tr>
                           <td>
                             <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
+                              >
+                                </span>
                           </td>
                           <td>
                             <h6 className="mb-0 font-weight-medium">Johnathan</h6>
@@ -204,12 +178,8 @@ export default function Tables() {
                    
                     <div className="activity-item mb-4 d-flex">
                       <div className="me-3">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                          alt="user"
-                          width="50"
-                          className="rounded-circle"
-                        />
+                  
+                  
                       </div>
                       <div className="mt-2">
                         <h5 className="mb-0 font-weight-medium">
@@ -221,10 +191,8 @@ export default function Tables() {
                         <h6 className="text-muted">uploaded this file</h6>
                         <div className="row">
                           <div className="col-4">
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/icon/zip.png"
-                              alt="user"
-                            />
+                      
+                      
                           </div>
                           <div className="col-8 d-flex align-items-center">
                             <div>
@@ -240,12 +208,8 @@ export default function Tables() {
                    
                     <div className="activity-item mb-4 d-flex">
                       <div className="me-3">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                          alt="user"
-                          width="50"
-                          className="rounded-circle"
-                        />
+                    
+                    
                       </div>
                       <div className="mt-2">
                         <h5 className="mb-1 font-weight-medium">
@@ -266,23 +230,15 @@ export default function Tables() {
                             href="javascript:void(0)"
                             className="align-middle position-relative"
                           >
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                              className="rounded-circle"
-                              alt="user"
-                              width="40"
-                            />
+                         
+                         
                           </a>
                           <a
                             href="javascript:void(0)"
                             className="align-middle position-relative"
                           >
-                            <img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                              className="rounded-circle"
-                              alt="user"
-                              width="40"
-                            />
+                       
+                       
                           </a>
                           <a
                             href="javascript:void(0)"
@@ -329,12 +285,8 @@ export default function Tables() {
                    
                     <div className="activity-item mb-4 d-flex">
                       <div className="me-3">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                          alt="user"
-                          width="50"
-                          className="rounded-circle"
-                        />
+                      
+                      
                       </div>
                       <div className="mt-2">
                         <h5 className="mb-0 font-weight-medium">
@@ -346,29 +298,17 @@ export default function Tables() {
                         <h6 className="text-muted">uploaded this file</h6>
                         <span>
                           <a href="javascript:void(0)" className="me-2"
-                            ><img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img1.jpg"
-                              alt="user"
-                              width="60"
-                          /></a>
+                            >
+                              </a>
                           <a href="javascript:void(0)" className="me-2"
-                            ><img
-                              src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/big/img2.jpg"
-                              alt="user"
-                              width="60"
-                          /></a>
+                            ></a>
                         </span>
                       </div>
                     </div>
                   
                     <div className="activity-item d-flex mb-2">
                       <div className="me-3">
-                        <img
-                          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                          alt="user"
-                          width="50"
-                          className="rounded-circle"
-                        />
+                     
                       </div>
                       <div className="mt-2">
                         <h5 className="mb-1 font-weight-medium">
