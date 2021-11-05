@@ -110,260 +110,193 @@ export default function Workers() {
      
       </Head>    
     
-                <div className="flex flex-row bg-gray-200 min-h-screen">
-              <div className="w-1/12"></div>
-                <div className="w-6/12  flex flex-col ">
-                <div className="h-1/6 "></div>
-<div className="h-4/6 ">
-            <div className="d-flex align-items-stretch">
-              <div className="card w-100">
-                <div className="card-body">
-                  <div className="d-md-flex">
-                    <div>
-                      <h4 className="card-title">
-                        <span className="lstick d-inline-block align-middle"></span
-                        >Projects of the Month
-                      </h4>
-                    </div>
-                    <div className="ms-auto">
-                      <select className="form-select">
-                        <option selected="">January 2021</option>
-                        <option value="1">February 2021</option>
-                        <option value="2">March 2021</option>
-                        <option value="3">April 2021</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="table-responsive mt-3">
-                    <table className="table v-middle no-wrap mb-0">
-                      <thead>
-                        <tr>
-                          <th className="border-0" colSpan="2">Assigned</th>
-                          <th className="border-0">Name</th>
-                          <th className="border-0">Priority</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td style={{width: "50px"}}>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">Sunil Joshi</h6>
-                            <small className="text-muted">Web Designer</small>
-                          </td>
-                          <td>Elite Admin</td>
-                          <td>
-                            <span className="badge bg-success rounded-pill"
-                              >Low</span
-                            >
-                          </td>
-                        </tr>
-                        <tr className="active">
-                          <td>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">Andrew</h6>
-                            <small className="text-muted">Project Manager</small>
-                          </td>
-                          <td>Real Homes</td>
-                          <td>
-                            <span className="badge bg-info rounded-pill"
-                              >Medium</span
-                            >
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">
-                              Bhavesh patel
-                            </h6>
-                            <small className="text-muted">Developer</small>
-                          </td>
-                          <td>MedicalPro Theme</td>
-                          <td>
-                            <span className="badge bg-primary rounded-pill"
-                              >High</span
-                            >
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">Nirav Joshi</h6>
-                            <small className="text-muted">Frontend Eng</small>
-                          </td>
-                          <td>Elite Admin</td>
-                          <td>
-                            <span className="badge bg-danger rounded-pill"
-                              >Low</span
-                            >
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/5.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">Micheal Doe</h6>
-                            <small className="text-muted">Content Writer</small>
-                          </td>
-                          <td>Helping Hands</td>
-                          <td>
-                            <span className="badge bg-success rounded-pill"
-                              >High</span
-                            >
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <span
-                              ><img
-                                src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                                alt="user"
-                                width="50"
-                                className="rounded-circle"
-                            /></span>
-                          </td>
-                          <td>
-                            <h6 className="mb-0 font-weight-medium">Johnathan</h6>
-                            <small className="text-muted">Graphic</small>
-                          </td>
-                          <td>Digital Agency</td>
-                          <td>
-                            <span className="badge bg-info rounded-pill">High</span>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-            <div className="h-1/6 "></div>
+      <div id="main-wrapper " className="bg-gray-200 min-h-screen">
+       
 
-         </div>
+       <div className="page-wrapper bg-gray-200 ">
+         <div className="container-fluid">
          
+         
+           <div className="flex flex-row">
+               <div className="w-1/12 ">
+
+               </div>
+               <div className="w-10/12 flex flex-col ">
+               <div className="h-1/6 "></div>
+<div className="h-4/6 ">
+           <div className="d-flex align-items-stretch">
+             <div className="card w-100">
+               <div className="card-body">
+                 <div className="d-md-flex">
+                   <div>
+                     <h4 className="card-title">
+                       <span className="lstick d-inline-block align-middle"></span
+                       >ALL workers
+                     </h4>
+                   </div>
+                   <div className="ms-auto">
+                     <select className="form-select">
+                       <option selected="">January 2021</option>
+                       <option value="1">February 2021</option>
+                       <option value="2">March 2021</option>
+                       <option value="3">April 2021</option>
+                     </select>
+                   </div>
+                 </div>
+                 <div className="table-responsive mt-3">
+                   <table className="table v-middle no-wrap mb-0">
+                     <thead>
+                       <tr>
+                         <th className="border-0" colSpan="2">workes name</th>
+                         <th className="border-0">worker position</th>
+                         <th className="border-0">worker avaibility</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td style={{width: "50px"}}>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/1.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">Sunil Joshi</h6>
+                           <small className="text-muted">Web Designer</small>
+                         </td>
+                         <td>Elite Admin</td>
+                         <td>
+                           <span className="badge bg-success rounded-pill"
+                             >Low</span
+                           >
+                         </td>
+                       </tr>
+                       <tr className="active">
+                         <td>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">Andrew</h6>
+                           <small className="text-muted">Project Manager</small>
+                         </td>
+                         <td>Real Homes</td>
+                         <td>
+                           <span className="badge bg-info rounded-pill"
+                             >Medium</span
+                           >
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">
+                             Bhavesh patel
+                           </h6>
+                           <small className="text-muted">Developer</small>
+                         </td>
+                         <td>MedicalPro Theme</td>
+                         <td>
+                           <span className="badge bg-primary rounded-pill"
+                             >High</span
+                           >
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">Nirav Joshi</h6>
+                           <small className="text-muted">Frontend Eng</small>
+                         </td>
+                         <td>Elite Admin</td>
+                         <td>
+                           <span className="badge bg-danger rounded-pill"
+                             >Low</span
+                           >
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/5.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">Micheal Doe</h6>
+                           <small className="text-muted">Content Writer</small>
+                         </td>
+                         <td>Helping Hands</td>
+                         <td>
+                           <span className="badge bg-success rounded-pill"
+                             >High</span
+                           >
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>
+                           <span
+                             ><img
+                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
+                               alt="user"
+                               width="50"
+                               className="rounded-circle"
+                           /></span>
+                         </td>
+                         <td>
+                           <h6 className="mb-0 font-weight-medium">Johnathan</h6>
+                           <small className="text-muted">Graphic</small>
+                         </td>
+                         <td>Digital Agency</td>
+                         <td>
+                           <span className="badge bg-info rounded-pill">High</span>
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+           </div>
+           <div className="h-1/6 "></div>
+
+        </div>
         
-   
-          <div className="  w-5/12  flex  flex-row ">
-              <div className=' w-3/12'></div>
-     
-        <div className=" flex-col ">
-            <div className="h-1/6"></div>
-            <div className="auth-box bg-white rounded h-4/6 flex flex-col">
-            <div id="loginform">
-            <div className="logo h-1/6">
-            </div>
-           
-            <div className="row">
-              <div className="col-12">
-                <form
-                  className="form-horizontal mt-3 form-material"
-                  id="loginform"
-                  action="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/html/main/index.html"
-                >
-                  <div className="form-group mb-3">
-                    <div className="">
-                      <input
-                        className="form-control text-center"
-                        type="text"
-                        required=""
-                        placeholder="Username"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group mb-3">
-                    <div className="">
-                      <input
-                        className="form-control text-center"
-                        type="text"
-                        required=""
-                        placeholder="Email"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group mb-4">
-                    <div className="">
-                      <input
-                        className="form-control text-center"
-                        type="password"
-                        required=""
-                        placeholder="Password"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <div className="d-flex">
-                     
-                      
-                    </div>
-                  </div>
-                  <div className="form-group text-center mt-4 mb-3">
-                    <div className="col-xs-12">
-                      <button
-                        className="
-                          btn btn-info
-                          d-block
-                          w-100
-                          waves-effect waves-light
-                        "
-                        type="submit"
-                      >
-                        Log In
-                      </button>
-                    </div>
-                  </div>
-                  
-                </form>
-              </div>
-            </div>
-          </div>
-            </div>
+       </div>
+  
         </div>
-      
- 
-          
-        </div>
-      
-        </div>
-        </div>
+
+        
+       </div>
+     </div>
+     </div>   
     )
 }

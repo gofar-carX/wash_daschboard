@@ -173,7 +173,7 @@ export default function Nav({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Tables')}
+                <a onClick={() => router.push('/components/Workers')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"

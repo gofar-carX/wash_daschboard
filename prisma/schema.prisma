@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model review_entity {
+  id        Int      @id(map: "PK_5a7a10bab252068bd06d10d49e6") @default(autoincrement())
+  message   String   @db.VarChar
+  user      String   @db.VarChar
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+}
+
+model user_entity {
+  id           Int      @id(map: "PK_b54f8ea623b17094db7667d8206") @default(autoincrement())
+  name         String   @db.VarChar
+  email        String   @db.VarChar
+  phone        Int
+  localisation String   @db.VarChar
+  createdAts   DateTime @default(now()) @db.Timestamp(6)
+}
+
+model worker_entity {
+  id           Int      @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
+  name         String   @db.VarChar
+  email        String   @db.VarChar
+  phone        Int
+  localisation String   @db.VarChar
+  createdAts   DateTime @default(now()) @db.Timestamp(6)
+}

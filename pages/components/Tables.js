@@ -110,10 +110,10 @@ export default function Tables() {
         ></script>
      
       </Head>
-      <div id="main-wrapper">
+      <div id="main-wrapper " className="bg-gray-200 min-h-screen">
        
 
-        <div className="page-wrapper">
+        <div className="page-wrapper bg-gray-200 ">
           <div className="container-fluid">
           
           
@@ -131,7 +131,7 @@ export default function Tables() {
                     <div>
                       <h4 className="card-title">
                         <span className="lstick d-inline-block align-middle"></span
-                        >Projects of the Month
+                        >Wash Service
                       </h4>
                     </div>
                     <div className="ms-auto">
@@ -147,9 +147,11 @@ export default function Tables() {
                     <table className="table v-middle no-wrap mb-0">
                       <thead>
                         <tr>
-                          <th className="border-0" colSpan="2">Assigned</th>
-                          <th className="border-0">Name</th>
-                          <th className="border-0">Priority</th>
+                          <th className="border-0" colSpan="2">service type</th>
+                          <th className="border-0">username</th>
+                          <th className="border-0">position</th>
+                          <th className="border-0">type car</th>
+
                         </tr>
                       </thead>
                       <tbody>
@@ -294,9 +296,7 @@ export default function Tables() {
    
          </div>
 
-          <footer className="footer text-center">
-            All Rights Reserved by Adminpro admin.
-          </footer>
+         
         </div>
       </div>
       </div>
