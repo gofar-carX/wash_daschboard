@@ -113,7 +113,7 @@ export default function Home() {
         ></script>
      
       </Head>
-<Login />
+<Homeo/>
       </div>
   );
 }
