@@ -128,7 +128,7 @@ export default function Login() {
         <div className="auth-box p-4 bg-white rounded">
           <div id="loginform">
             <div className="logo">
-              <h3 className="box-title mb-3">Sign In</h3>
+              <h3 className="box-title mb-3 text-center">Sign In</h3>
             </div>
            
             <div className="row">
@@ -198,31 +198,7 @@ export default function Login() {
                       </button>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
-                      <div className="social mb-3">
-                        <a
-                          
-                          className="btn btn-facebook"
-                          data-bs-toggle="tooltip"
-                          title="Login with Facebook"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="ri-facebook-box-fill fs-4"
-                          ></i>
-                        </a>
-                        <a
-                         
-                          className="btn btn-googleplus"
-                          data-bs-toggle="tooltip"
-                          title="Login with Google"
-                        >
-                          <i aria-hidden="true" className="ri-google-fill fs-4"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                 
                   <div className="form-group mb-0 mt-4">
                     <div className="col-sm-12 justify-content-center d-flex">
                       <p>
