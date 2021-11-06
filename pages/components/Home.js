@@ -1434,7 +1434,7 @@ export default function Homeo({href}) {
                     <table className="table v-middle no-wrap mb-0">
                       <thead>
                         <tr>
-                          <th className="border-0" colspan="2">Assigned</th>
+                          <th className="border-0" colSpan="2">Assigned</th>
                           <th className="border-0">Name</th>
                           <th className="border-0">Priority</th>
                         </tr>
@@ -2341,7 +2341,7 @@ export default function Homeo({href}) {
                   className="form-check-input"
                   id="theme-view"
                 />
-                <label className="form-check-label" for="theme-view">
+                <label className="form-check-label" htmlFor="theme-view">
                   <span>Dark Theme</span>
                 </label>
               </div>
@@ -2352,7 +2352,7 @@ export default function Homeo({href}) {
                   name="collapssidebar"
                   id="collapssidebar"
                 />
-                <label className="form-check-label" for="collapssidebar">
+                <label className="form-check-label" htmlFor="collapssidebar">
                   <span>Collapse Sidebar</span>
                 </label>
               </div>
@@ -2363,7 +2363,7 @@ export default function Homeo({href}) {
                   className="form-check-input"
                   id="sidebar-position"
                 />
-                <label className="form-check-label" for="sidebar-position">
+                <label className="form-check-label" htmlFor="sidebar-position">
                   <span>Fixed Sidebar</span>
                 </label>
               </div>
@@ -2374,7 +2374,7 @@ export default function Homeo({href}) {
                   className="form-check-input"
                   id="header-position"
                 />
-                <label className="form-check-label" for="header-position">
+                <label className="form-check-label" htmlFor="header-position">
                   <span>Fixed Header</span>
                 </label>
               </div>
@@ -2385,7 +2385,7 @@ export default function Homeo({href}) {
                   className="form-check-input"
                   id="boxed-layout"
                 />
-                <label className="form-check-label" for="boxed-layout">
+                <label className="form-check-label" htmlFor="boxed-layout">
                   <span>Boxed Layout</span>
                 </label>
               </div>
