@@ -17,7 +17,7 @@ export default function Workers({href}) {
    
   }
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/Workers/findallWorkers')
+    axios.get('/api/Workers/findallWorkers')
     .then((res)=>{
       console.log(res)
       setTab(res.data)
