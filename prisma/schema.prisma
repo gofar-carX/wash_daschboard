@@ -19,9 +19,9 @@ model user_entity {
   name           String?          @db.VarChar
   email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @db.VarChar
   phone          Int?
-  localisation   String?          @db.VarChar
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   photo          String?          @db.VarChar
+
   request_entity request_entity[]
 }
 
