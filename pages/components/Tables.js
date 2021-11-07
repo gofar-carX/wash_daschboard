@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "../../styles/Home.module.css";
 import Head from "next/head";
 import { useRouter } from 'next/router'
+import axios from 'axios';
 export default function Tables({href}) {
   const router = useRouter()
+  const [tab,setTab]=useState([])
+  useEffect(()=>{
+    axios.get('http://localhost:3000/api/Request/findAllRequest')
+    .then((res)=>{
+      console.log(res.data)
+      setTab(res.data)})
+    .catch((err)=>console.log(err))
+  },[])
   const handleClick = (e) => {
     e.preventDefault()
     router.push(href)
   }
+
     return (
       <div classNameName={styles.container}>
       <Head>
@@ -1088,7 +1098,7 @@ export default function Tables({href}) {
                    <div>
                      <h4 className="card-title">
                        <span className="lstick d-inline-block align-middle"></span
-                       >ALL workers
+                       >ALL Requests
                      </h4>
                    </div>
                    <div className="ms-auto">
@@ -1104,13 +1114,20 @@ export default function Tables({href}) {
                    <table className="table v-middle no-wrap mb-0">
                      <thead>
                        <tr>
-                         <th className="border-0" colSpan="2">workes name</th>
-                         <th className="border-0">worker position</th>
-                         <th className="border-0">worker avaibility</th>
+                         <th className="border-0" colSpan="2">service</th>
+                         <th className="border-0"> position</th>
+                         <th className="border-0">type of car</th>
+                         <th className="border-0">type of wash</th>
+                         <th className="border-0">username</th>
+                         <th className="border-0">avaibility</th>
+
                        </tr>
                      </thead>
                      <tbody>
-                       <tr>
+                       {
+                          tab.map((e)=>(
+                            <>
+     <tr>
                          <td style={{width: "50px"}}>
                            <span
                              ><img
@@ -1120,123 +1137,19 @@ export default function Tables({href}) {
                                className="rounded-circle"
                            /></span>
                          </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">Sunil Joshi</h6>
-                           <small className="text-muted">Web Designer</small>
-                         </td>
-                         <td>Elite Admin</td>
-                         <td>
-                           <span className="badge bg-success rounded-pill"
-                             >Low</span
-                           >
-                         </td>
+                        
+                         <td>{e.service}</td>
+                         <td>{e.position}</td>
+                         <td>{e.typeOfCar}</td>
+                         <td>{e.typeOfWash}</td>
+                         <td>{e.userId}</td>
+                          <td></td>
                        </tr>
-                       <tr className="active">
-                         <td>
-                           <span
-                             ><img
-                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/2.jpg"
-                               alt="user"
-                               width="50"
-                               className="rounded-circle"
-                           /></span>
-                         </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">Andrew</h6>
-                           <small className="text-muted">Project Manager</small>
-                         </td>
-                         <td>Real Homes</td>
-                         <td>
-                           <span className="badge bg-info rounded-pill"
-                             >Medium</span
-                           >
-                         </td>
-                       </tr>
-                       <tr>
-                         <td>
-                           <span
-                             ><img
-                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/3.jpg"
-                               alt="user"
-                               width="50"
-                               className="rounded-circle"
-                           /></span>
-                         </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">
-                             Bhavesh patel
-                           </h6>
-                           <small className="text-muted">Developer</small>
-                         </td>
-                         <td>MedicalPro Theme</td>
-                         <td>
-                           <span className="badge bg-primary rounded-pill"
-                             >High</span
-                           >
-                         </td>
-                       </tr>
-                       <tr>
-                         <td>
-                           <span
-                             ><img
-                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/4.jpg"
-                               alt="user"
-                               width="50"
-                               className="rounded-circle"
-                           /></span>
-                         </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">Nirav Joshi</h6>
-                           <small className="text-muted">Frontend Eng</small>
-                         </td>
-                         <td>Elite Admin</td>
-                         <td>
-                           <span className="badge bg-danger rounded-pill"
-                             >Low</span
-                           >
-                         </td>
-                       </tr>
-                       <tr>
-                         <td>
-                           <span
-                             ><img
-                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/5.jpg"
-                               alt="user"
-                               width="50"
-                               className="rounded-circle"
-                           /></span>
-                         </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">Micheal Doe</h6>
-                           <small className="text-muted">Content Writer</small>
-                         </td>
-                         <td>Helping Hands</td>
-                         <td>
-                           <span className="badge bg-success rounded-pill"
-                             >High</span
-                           >
-                         </td>
-                       </tr>
-                       <tr>
-                         <td>
-                           <span
-                             ><img
-                               src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/images/users/6.jpg"
-                               alt="user"
-                               width="50"
-                               className="rounded-circle"
-                           /></span>
-                         </td>
-                         <td>
-                           <h6 className="mb-0 font-weight-medium">Johnathan</h6>
-                           <small className="text-muted">Graphic</small>
-                         </td>
-                         <td>Digital Agency</td>
-                         <td>
-                           <span className="badge bg-info rounded-pill">High</span>
-                         </td>
-                       </tr>
-                     </tbody>
+                  
+                            </>
+                          ))
+                       }
+                    </tbody>
                    </table>
                  </div>
                </div>
