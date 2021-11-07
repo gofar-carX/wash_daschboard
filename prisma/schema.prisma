@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model review_entity {
+  id        Int      @id(map: "PK_5a7a10bab252068bd06d10d49e6") @default(autoincrement())
+  message   String   @db.VarChar
+  user      String   @db.VarChar
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+}
+
+model user_entity {
+  id             Int              @id(map: "PK_b54f8ea623b17094db7667d8206") @default(autoincrement())
+  name           String?          @db.VarChar
+  email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @db.VarChar
+  phone          Int?
+  localisation   String?          @db.VarChar
+  createdAts     DateTime         @default(now()) @db.Timestamp(6)
+  photo          String?          @db.VarChar
+  request_entity request_entity[]
+}
+
+model worker_entity {
+  id           Int      @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
+  name         String   @db.VarChar
+  email        String   @db.VarChar
+  phone        Int
+  localisation String   @db.VarChar
+  createdAts   DateTime @default(now()) @db.Timestamp(6)
+}
+
+model admin_entity {
+  id         Int      @id(map: "PK_bc992df5ddb70aefb955b8a0c92") @default(autoincrement())
+  name       String?  @db.VarChar
+  email      String?  @unique(map: "UQ_2a4c8cb05264be7377c625c2715") @db.VarChar
+  password   String?  @unique(map: "UQ_0ae557108710b125af9068ace38") @db.VarChar
+  createdAts DateTime @default(now()) @db.Timestamp(6)
+}
+
+model request_entity {
+  id          Int          @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
+  service     String       @db.VarChar
+  position    String       @db.VarChar
+  typeOfCar   String       @db.VarChar
+  typeOfWash  String       @db.VarChar
+  createdAt   DateTime     @default(now()) @db.Timestamp(6)
+  userId      Int?
+  user_entity user_entity? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
+}

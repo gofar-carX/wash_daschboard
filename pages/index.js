@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import styles from "../styles/Home.module.css";
-import Nav from "./components/Nav";
-import Tables from "./components/Tables";
 import Homeo from "./components/Home";
-import Login from "./components/Login";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -43,77 +41,8 @@ export default function Home() {
           rel="stylesheet"
         />
 
-        <script
-          async
-          src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
-        ></script>
-        <script
-          async
-          src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/libs/jquery/dist/jquery.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/app.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/app.init.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/app-style-switcher.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/extra-libs/sparkline/sparkline.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/waves.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/sidebarmenu.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/feather.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/custom.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/libs/apexcharts/dist/apexcharts.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/libs/jvectormap/jquery-jvectormap.min.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/assets/extra-libs/jvector/jquery-jvectormap-us-aea-en.js"
-        ></script>
-        <script
-          async
-          src="https://demos.wrappixel.com/premium-admin-templates/bootstrap/adminpro-bootstrap/package/dist/js/pages/dashboards/dashboard3.js"
-        ></script>
-     
       </Head>
-<Login />
+<Homeo />
       </div>
   );
 }
