@@ -7,11 +7,11 @@ export default function Tables({href}) {
   const router = useRouter()
   const [tab,setTab]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/Request/findAllRequest')
-    .then((res)=>{
-      console.log(res.data)
-      setTab(res.data)})
-    .catch((err)=>console.log(err))
+    // axios.get('http://localhost:3000/api/Request/findAllRequest')
+    // .then((res)=>{
+    //   console.log(res.data)
+    //   setTab(res.data)})
+    // .catch((err)=>console.log(err))
   },[])
   const handleClick = (e) => {
     e.preventDefault()
