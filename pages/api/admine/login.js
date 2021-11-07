@@ -14,11 +14,13 @@ export default async function login(req,res){
    try {
      
      const  admin  = req.body 
+     console.log(admin)
      const Admin = await prisma.admin_entity.findUnique({
-      where: {
-        email: admin.email,
-      },
-    })
+       where: {
+         email: admin.email,
+        },
+      })
+      
      compare(admin.password, Admin.password, function(err, result) {
         if(!err && result ){
           const claims = {sub:Admin.id, admin: Admin.name}
@@ -30,13 +32,12 @@ export default async function login(req,res){
      });
      
     
-    
-    
+  
 
    }
    catch(e){
   
-    res.json({message : 'something went wrong'})
+    res.json({message : 'something went'})
    }finally {
     prisma.$disconnect()
    }

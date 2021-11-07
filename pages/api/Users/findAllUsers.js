@@ -9,7 +9,7 @@ export default async function find(req,res){
      
 
      const User = await prisma.user_entity.findMany()
-    
+    console.log(User)
     res.json(User)
      
    }catch(e){
