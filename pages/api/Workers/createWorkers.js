@@ -4,7 +4,7 @@ const prisma = new PrismaClient({log: ["query"]})
 
 export default async function create(req,res){
     if(req.method === "POST"){
-  
+  console.log(req.body)
    try {
      const  worker  = req.body 
      
