@@ -8,7 +8,9 @@ const Login = () => {
 
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
-        axios.post('/api/admine/find')
+        axios.post('/api/admine/login',{
+            email,password
+        })
         .then((res)=>{
           console.log(res)
          
