@@ -2,24 +2,16 @@ import React, { useEffect, useState } from 'react'
 import styles from "../../styles/Home.module.css";
 import Head from "next/head";
 import axios from 'axios'
-import { useRouter } from 'next/router'
+import Router from 'next/router'
 export default function Workers({href}) {
   const [tab,setTab]=useState([])
-  const router = useRouter()
-  const handleClick = (e) => {
-    e.preventDefault()
-    router.push(href)
-  }
-  function getStaticProps() {
+  
+
  
-  
-  
-   
-  }
   useEffect(()=>{
     axios.get('/api/Workers/findallWorkers')
     .then((res)=>{
-      console.log(res)
+      console.log(res.data)
       setTab(res.data)
     })
     .catch((err)=>{
@@ -137,7 +129,7 @@ export default function Workers({href}) {
             <ul className="navbar-nav justify-content-end">
         
               <li >
-                <button className="nav-link dropdown-toggle waves-effect waves-dark" onClick={() => router.push('/components/AddWorker')} >Add Worker</button>
+                <button className="nav-link dropdown-toggle waves-effect waves-dark" onClick={() => Router.replace('/components/AddWorker')} >Add Worker</button>
               </li>
            
               <li className="nav-item dropdown">
@@ -986,7 +978,7 @@ export default function Workers({href}) {
             <ul id="sidebarnav">
              
               <li className="sidebar-item">
-                <a href={href} onClick={() => router.push('/components/Tables')}
+                <a href={href} onClick={() => Router.replace('/components/Tables')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"
@@ -998,7 +990,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Tables')}
+                <a onClick={() => Router.replace('/components/Tables')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"
@@ -1011,7 +1003,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Tables')}
+                <a onClick={() => Router.replace('/components/Tables')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"
@@ -1023,7 +1015,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Tables')}
+                <a onClick={() => Router.replace('/components/Tables')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                  
                   aria-expanded="false"
@@ -1035,7 +1027,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Workers')}
+                <a onClick={() => Router.replace('/components/Workers')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"
@@ -1047,7 +1039,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Tables')}
+                <a onClick={() => Router.replace('/components/Tables')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                  
                   aria-expanded="false"
@@ -1059,7 +1051,7 @@ export default function Workers({href}) {
                 </a>
              </li>
              <li className="sidebar-item">
-                <a onClick={() => router.push('/components/Login')}
+                <a onClick={() => Router.replace('/components/Login')}
                   className="sidebar-link has-arrow waves-effect waves-dark"
                   
                   aria-expanded="false"
@@ -1121,7 +1113,7 @@ export default function Workers({href}) {
                        </tr>
                      </thead>
                      <tbody>
-                      {tab.map((e)=>(
+                      {tab?.map((e)=>(
                         <>
                                <tr>
                                <td style={{width: "50px"}}>
