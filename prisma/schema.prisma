@@ -7,6 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model admin_entity {
+  id         Int      @id(map: "PK_bc992df5ddb70aefb955b8a0c92") @default(autoincrement())
+  name       String?  @db.VarChar
+  email      String   @unique(map: "UQ_2a4c8cb05264be7377c625c2715") @db.VarChar
+  password   String   @db.VarChar
+  createdAts DateTime @default(now()) @db.Timestamp(6)
+}
+
+model request_entity {
+  id            Int            @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
+  service       String?        @db.VarChar
+  typeOfCar     String         @db.VarChar
+  typeOfWash    String         @db.VarChar
+  createdAt     DateTime       @default(now()) @db.Timestamp(6)
+  userId        Int?
+  isPayed       Boolean        @default(false)
+  Price         String?        @db.VarChar
+  paymentDate   DateTime?      @db.Timestamp(6)
+  workerId      Int?
+  positionx     String         @db.VarChar
+  positiony     String         @db.VarChar
+  isServed      Boolean        @default(false)
+  user_entity   user_entity?   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
+  worker_entity worker_entity? @relation(fields: [workerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_0d372dc9ed938a6c635b055b1dd")
+}
+
 model review_entity {
   id        Int      @id(map: "PK_5a7a10bab252068bd06d10d49e6") @default(autoincrement())
   message   String   @db.VarChar
@@ -21,34 +47,16 @@ model user_entity {
   phone          Int?
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   photo          String?          @db.VarChar
-
   request_entity request_entity[]
 }
 
 model worker_entity {
-  id           Int      @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
-  name         String   @db.VarChar
-  email        String   @db.VarChar
-  phone        Int
-  localisation String   @db.VarChar
-  createdAts   DateTime @default(now()) @db.Timestamp(6)
-}
-
-model admin_entity {
-  id         Int      @id(map: "PK_bc992df5ddb70aefb955b8a0c92") @default(autoincrement())
-  name       String?  @db.VarChar
-  email      String?  @unique(map: "UQ_2a4c8cb05264be7377c625c2715") @db.VarChar
-  password   String?  @unique(map: "UQ_0ae557108710b125af9068ace38") @db.VarChar
-  createdAts DateTime @default(now()) @db.Timestamp(6)
-}
-
-model request_entity {
-  id          Int          @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
-  service     String       @db.VarChar
-  position    String       @db.VarChar
-  typeOfCar   String       @db.VarChar
-  typeOfWash  String       @db.VarChar
-  createdAt   DateTime     @default(now()) @db.Timestamp(6)
-  userId      Int?
-  user_entity user_entity? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
+  id             Int              @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
+  name           String           @db.VarChar
+  email          String           @db.VarChar
+  phone          Int
+  createdAts     DateTime         @default(now()) @db.Timestamp(6)
+  positionx      String           @db.VarChar
+  positiony      String           @db.VarChar
+  request_entity request_entity[]
 }
