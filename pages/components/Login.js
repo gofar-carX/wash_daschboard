@@ -1,27 +1,33 @@
-import React from 'react';
-import axios from 'axios'
+import React,{useState} from 'react';
 
 
-const Login = () => {
-    const handleFormSubmit = (e) => {
+
+ const Login = () => {
+     const [message, setMessage] = useState('')
+    async function handleFormSubmit(e) {
         e.preventDefault();
 
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
-        axios.post('/api/admine/login',{
-            email,password
-        })
-        .then((res)=>{
-          console.log(res)
-         
-        })
-        .catch((err)=>{
-          console.log(err)
-        })
-        
+       const resp = await fetch('/api/admine/login', { 
+           method: 'POST',
+           headers: {
+               'Content-type' : 'application/json'
+           },
+           body : JSON.stringify({
+               email,
+               password
+           })
+
+       } )
+       const json = await resp.json()
+
+        setMessage(json)
     };
     return (
+        
         <div className='h-screen flex bg-gray-bg1'>
+            {JSON.stringify(message)}
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
                     Log in to your account 🔐
