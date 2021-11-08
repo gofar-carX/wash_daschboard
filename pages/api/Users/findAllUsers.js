@@ -5,12 +5,11 @@ const prisma = new PrismaClient({log: ["query"]})
 export default async function find(req,res){
   
    try {
-     const  user  = req.body 
-     
+   
 
      const User = await prisma.user_entity.findMany()
-    console.log(User)
-    res.json(User)
+  
+    res.send(User)
      
    }catch(e){
    console.log(e)

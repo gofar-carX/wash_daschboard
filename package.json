@@ -1,35 +1,56 @@
 {
-  "name": "wash-dashboard",
+  "name": "nextjs-material-dashboard",
+  "version": "1.1.0",
   "private": true,
-  "description": "a really cool app",
-  "version": "1.0.0",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
-    "dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf .next/ && npm install && npm run dev"
   },
   "dependencies": {
+    "@material-ui/core": "4.11.3",
+    "@material-ui/icons": "4.11.2",
     "@prisma/client": "^3.4.1",
-    "@types/cookie": "^0.4.1",
+    "@zeit/next-css": "1.0.1",
+    "@zeit/next-sass": "1.0.1",
+    "chartist": "0.10.1",
+    "classnames": "2.2.6",
+    "history": "5.0.0",
+    "next": "10.0.5",
+    "next-compose-plugins": "2.2.1",
+    "next-images": "1.3.1",
+    "path": "0.12.7",
+    "perfect-scrollbar": "1.5.0",
+    "prisma": "^3.4.1",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-chartist": "0.14.3",
+    "react-dom": "17.0.1",
+    "react-swipeable-views": "0.13.9",
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
-    "cookie": "^0.4.1",
     "cors": "^2.8.5",
-    "jsonwebtoken": "^8.5.1",
-    "next": "^12.0.2",
-    "prisma": "^3.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "jsonwebtoken": "^8.5.1"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "eslint": "7",
-    "eslint-config-next": "12.0.2",
-    "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.19"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "optionalDependencies": {
+    "node-sass": "4.14.1",
+    "typescript": "4.1.3"
   }
 }
