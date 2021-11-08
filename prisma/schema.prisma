@@ -40,7 +40,6 @@ model user_entity {
   phone          Int?
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   photo          String?          @db.VarChar
-
   request_entity request_entity[]
 }
 

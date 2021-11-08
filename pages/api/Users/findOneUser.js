@@ -6,11 +6,11 @@ export default async function find(req,res){
   
    try {
      
+    console.log(req.body);
 
      const User = await prisma.user_entity.findUnique({
-         
         where: {
-            id:3,
+            id:req.body.id,
           }
         
       })
