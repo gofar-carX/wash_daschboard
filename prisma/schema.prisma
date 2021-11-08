@@ -16,14 +16,20 @@ model admin_entity {
 }
 
 model request_entity {
-  id          Int          @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
-  service     String       @db.VarChar
-  position    String       @db.VarChar
-  typeOfCar   String       @db.VarChar
-  typeOfWash  String       @db.VarChar
-  createdAt   DateTime     @default(now()) @db.Timestamp(6)
-  userId      Int?
-  user_entity user_entity? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
+  id            Int            @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
+  service       String?        @db.VarChar
+  typeOfCar     String         @db.VarChar
+  typeOfWash    String         @db.VarChar
+  createdAt     DateTime       @default(now()) @db.Timestamp(6)
+  userId        Int?
+  isPayed       Boolean        @default(false)
+  Price         String?        @db.VarChar
+  paymentDate   DateTime?      @db.Timestamp(6)
+  workerId      Int?
+  positionx     String         @db.VarChar
+  positiony     String         @db.VarChar
+  user_entity   user_entity?   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
+  worker_entity worker_entity? @relation(fields: [workerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_0d372dc9ed938a6c635b055b1dd")
 }
 
 model review_entity {
@@ -44,10 +50,12 @@ model user_entity {
 }
 
 model worker_entity {
-  id           Int      @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
-  name         String   @db.VarChar
-  email        String   @db.VarChar
-  phone        Int
-  localisation String   @db.VarChar
-  createdAts   DateTime @default(now()) @db.Timestamp(6)
+  id             Int              @id(map: "PK_7b07d16a919661836685e11e8da") @default(autoincrement())
+  name           String           @db.VarChar
+  email          String           @db.VarChar
+  phone          Int
+  createdAts     DateTime         @default(now()) @db.Timestamp(6)
+  positionx      String           @db.VarChar
+  positiony      String           @db.VarChar
+  request_entity request_entity[]
 }
