@@ -29,6 +29,7 @@ model request_entity {
   positionx     String         @db.VarChar
   positiony     String         @db.VarChar
   isServed      Boolean        @default(false)
+  duration      String?        @db.VarChar
   user_entity   user_entity?   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
   worker_entity worker_entity? @relation(fields: [workerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_0d372dc9ed938a6c635b055b1dd")
 }
@@ -58,5 +59,6 @@ model worker_entity {
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   positionx      String           @db.VarChar
   positiony      String           @db.VarChar
+  isAvailable    Boolean          @default(false)
   request_entity request_entity[]
 }
