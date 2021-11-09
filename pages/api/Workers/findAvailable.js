@@ -1,21 +1,21 @@
 import { PrismaClient } from ".prisma/client";
+import {authenticated} from "../Auth"
 
 const prisma = new PrismaClient({log: ["query"]})
 
 export default async function find(req,res){
   
    try {
-     
+     const  worker  = req.body 
    
 
-     const User = await prisma.user_entity.findUnique({
-        where: {
-            id:req.body.id,
-          }
-        
-      })
-    
-    res.json(User)
+     const Worker = await prisma.worker_entity.findMany({
+         where: { 
+             isAvailable : true
+         }
+     })
+  
+    res.send(Worker)
      
    }catch(e){
    console.log(e)
