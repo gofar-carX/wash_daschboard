@@ -48,6 +48,7 @@ function TableList() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
+  
   useEffect(()=>{
     axios.get('/api/Workers/findallWorkers')
     .then((res)=>{
@@ -63,18 +64,18 @@ function TableList() {
             <CardHeader color="warning">
               <h4 className={classes.cardTitleWhite}>Employees</h4>
               <p className={classes.cardCategoryWhite}>
-               All Our Workers
+              Available workers
               </p>
             </CardHeader>
             <CardBody>
               <Table
                 tableHeaderColor="warning"
                 tableHead={["ID", "Name", "Availability"]}
-                tableData={tab?.map((e) => (
-                       [e.id, e.name,`${e.isAvailable}`]
-                ))
+                tableData={Array.isArray(tab)? tab?.map((e) => (
+                  [e.id, e.name,`${e.isAvailable}` ]
+                  )   ):null
                 }
-              />
+                />
             </CardBody>
           </Card>
       </GridItem>

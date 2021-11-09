@@ -49,6 +49,7 @@ function WorkerAvailabe(props) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
+  const [assigned,setAssigned]=useState('')
   useEffect(()=>{
     axios.get('/api/Workers/findAvailable')
     .then((res)=>{
@@ -79,10 +80,10 @@ function WorkerAvailabe(props) {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Availability","temps"]}
-                tableData={tab?.map((e) => (
-                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`]
-                ))
+                tableHead={["ID", "Name", "Availability","distance","assigned"]}
+                tableData={Array.isArray(tab)? tab?.map((e) => (
+                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`,<button>assgined</button>]
+                )).sort((a,b) =>  parseFloat(a[3]) - parseFloat(b[3])).filter((e,i)=> i<3   ) : null
                 }
               />
             </CardBody>
