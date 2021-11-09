@@ -56,10 +56,18 @@ function WorkerAvailabe(props) {
       setTab(res.data)
     })
    },[])
- 
+   function distance( wx,wy,ux,uy){
+     var result=(wy-uy)+Math.cos(wy)*Math.cos(uy)*(wx-ux)
+     var x= result.toFixed(2);
+
+   return (x)
+
+  }
   return (
     <GridContainer>
-        {console.log(router.query)}
+      {/* {console.log(router.query)} */}
+        {/* 
+        {console.log(tab)} */}
       <GridItem xs={12} sm={12} md={12}>
       <Card>
             <CardHeader color="warning">
@@ -71,9 +79,9 @@ function WorkerAvailabe(props) {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Availability"]}
+                tableHead={["ID", "Name", "Availability","temps"]}
                 tableData={tab?.map((e) => (
-                       [e.id, e.name,`${e.isAvailable}`]
+                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`]
                 ))
                 }
               />
