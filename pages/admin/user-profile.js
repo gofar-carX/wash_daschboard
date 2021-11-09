@@ -44,6 +44,7 @@ function UserProfile() {
   const [phone,setPhone]=useState(0)
   const [PostionX,setPostionX]=useState('')
   const [PostionY,setPostionY]=useState('')
+  const [Available,setAvailable]=useState('')
 function changename(e){
   setName(e.target.value)
   console.log(name)
@@ -70,16 +71,29 @@ function changePostionY(e){
 
   setPostionY(e.target.value)
 }
+function changeAvailable(e) {
+  console.log(e.target.checked)
+  setAvailable(e.target.checked)
+}
  function  addworker(){
 axios.post('/api/Workers/createWorkers',{
   name:name,
   email:email,
   positionx:PostionX,
   positiony:PostionY,
-  phone:Number(phone)
-
+  phone:Number(phone),
+  isAvailable: Boolean(Available)
+  
 })
-.then(res=>console.log(res))
+.then(res=>{
+   setAvailable(false)
+   setPhone(0)
+   setPostionX('')
+   setPostionY('')
+   setName('')
+   setEmail('')
+}
+)
 .catch((err)=>console.log(err))
 
   }
@@ -160,6 +174,20 @@ axios.post('/api/Workers/createWorkers',{
                       value:`${PostionY}`,
                       placeholder: "Latitude",
                       onChange:changePostionY
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={6}>
+                  <CustomInput
+                     labelText="Available"
+                     inputProps={{
+                      value:`${Available}`,
+                      type: "checkbox",
+                      placeholder: "Latitude",
+                      onChange:changeAvailable
                     }}
                     formControlProps={{
                       fullWidth: true,

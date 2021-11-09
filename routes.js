@@ -60,7 +60,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Typography",
+    name: "Requests",
     rtlName: "طباعة",
     icon: LibraryBooks,
 
