@@ -12,7 +12,6 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import axios from "axios";
 import { Button } from "@material-ui/core";
-import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
 
 const styles = {
@@ -46,56 +45,45 @@ const styles = {
 };
 
 
-function TableList() {
+function WorkerAvailabe(props) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
   useEffect(()=>{
-    axios.get('/api/Request/findAllRequest')
+    axios.get('/api/Workers/findAvailable')
     .then((res)=>{
       console.log(res.data)
       setTab(res.data)
     })
    },[])
-   function distance(){
-
-   }
+ 
   return (
     <GridContainer>
+        {console.log(router.query)}
       <GridItem xs={12} sm={12} md={12}>
-        <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
-          </CardHeader>
-          <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","accepter"]}
-
-              tableData={
-                tab?.map((e)=>(
-                  
-                  [e.service, e.typeOfCar, e.typeOfWash, `${e.isPayed? e.isPayed: 0 }`,`${e.isServed}`,e.Price ,e.createdAt.slice(0,10),e.createdAt.slice(11,16),<button onClick={()=> { router.push({
-                   pathname: './workersAvailable',
-                   query : {Positiony : e.positiony,
-                            Positionx: e.positionx              
-                   }
-                  })} } >accepter</button>]
-
+      <Card>
+            <CardHeader color="warning">
+              <h4 className={classes.cardTitleWhite}>Employees</h4>
+              <p className={classes.cardCategoryWhite}>
+               All Our Workers
+              </p>
+            </CardHeader>
+            <CardBody>
+              <Table
+                tableHeaderColor="warning"
+                tableHead={["ID", "Name", "Availability"]}
+                tableData={tab?.map((e) => (
+                       [e.id, e.name,`${e.isAvailable}`]
                 ))
-              
-              }
-            />
-          </CardBody>
-        </Card>
+                }
+              />
+            </CardBody>
+          </Card>
       </GridItem>
     </GridContainer>
   );
 }
 
-TableList.layout = Admin;
+WorkerAvailabe.layout = Admin;
 
-export default TableList;
+export default  WorkerAvailabe;
