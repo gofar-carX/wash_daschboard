@@ -80,7 +80,7 @@ function TableList() {
                    pathname: './workersAvailable',
                    query : {Positiony : e.positiony,
                             Positionx: e.positionx ,
-                            id: e            
+                            id: e.id            
                    }
                   })} } >accepter</button>]
 
