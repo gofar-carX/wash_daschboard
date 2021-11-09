@@ -10,7 +10,7 @@ export default async function find(req,res){
 
 
      const Request = await prisma.request_entity.findMany(
-      {include : {user_entity:true}}
+      {include : {user_entity:true,worker_entity:true}}
     )    
     res.json(Request)
      
