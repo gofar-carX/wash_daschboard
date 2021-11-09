@@ -57,9 +57,7 @@ function TableList() {
       setTab(res.data)
     })
    },[])
-   function distance(){
 
-   }
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -81,7 +79,8 @@ function TableList() {
                   [e.service, e.typeOfCar, e.typeOfWash, `${e.isPayed? e.isPayed: 0 }`,`${e.isServed}`,e.Price ,e.createdAt.slice(0,10),e.createdAt.slice(11,16),<button onClick={()=> { router.push({
                    pathname: './workersAvailable',
                    query : {Positiony : e.positiony,
-                            Positionx: e.positionx              
+                            Positionx: e.positionx ,
+                            id: e            
                    }
                   })} } >accepter</button>]
 

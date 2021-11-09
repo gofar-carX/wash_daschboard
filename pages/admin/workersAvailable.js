@@ -79,10 +79,10 @@ function WorkerAvailabe(props) {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Availability","temps"]}
-                tableData={tab?.map((e) => (
-                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`]
-                ))
+                tableHead={["ID", "Name", "Availability","temps","assigned"]}
+                tableData={Array.isArray(tab)? tab?.map((e) => (
+                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`,<button>assgined</button>]
+                )).sort((a,b) =>  parseFloat(a[3]) - parseFloat(b[3])).filter((e,i)=> i<3   ) : null
                 }
               />
             </CardBody>
