@@ -51,6 +51,14 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
+    path: "/workers",
+    name: "Workers",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+
+    layout: "/admin",
+  },
+  {
     path: "/typography",
     name: "Typography",
     rtlName: "طباعة",
