@@ -1,20 +1,23 @@
 import { PrismaClient } from ".prisma/client";
-import {hash} from 'bcrypt'
+
 
 const prisma = new PrismaClient({log: ["query"]})
 
-export default async function create(req,res){
+export default async function update(req,res){
   
    try {
      const  request  = req.body 
      
       // Store hash in your password DB.
     
-     console.log(user) 
+    
      
-     const Request = await prisma.request_entity.create({
-         data:request
-     })
+     const Request = await prisma.request_entity.update(
+        {
+          where: {id : request.id },
+          data :  request 
+         }
+     )
     
     res.json(Request)
  

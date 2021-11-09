@@ -6,7 +6,7 @@ export default async function find(req,res){
   
    try {
      
-    console.log(req.body);
+   
 
      const User = await prisma.user_entity.findUnique({
         where: {

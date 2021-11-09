@@ -36,7 +36,7 @@ const dashboardRoutes = [
   },
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Users ",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
 
@@ -44,7 +44,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table-list",
-    name: "Table List",
+    name: "Workers",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
 
@@ -52,7 +52,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Typography",
+    name: "Requests",
     rtlName: "طباعة",
     icon: LibraryBooks,
 

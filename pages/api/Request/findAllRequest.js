@@ -8,10 +8,10 @@ export default async function find(req,res){
      const  request  = req.body 
      
 
-     const Request = await prisma.request_entity.findMany({
-       include : {user_entity:true}
-     })
-    
+
+     const Request = await prisma.request_entity.findMany(
+      {include : {user_entity:true}}
+    )    
     res.json(Request)
      
    }catch(e){
