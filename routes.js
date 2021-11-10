@@ -29,7 +29,6 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
     icon: Dashboard,
 
     layout: "/admin",
@@ -37,7 +36,6 @@ const dashboardRoutes = [
   {
     path: "/user-profile",
     name: "Add Worker",
-    rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
 
     layout: "/admin",
@@ -45,7 +43,6 @@ const dashboardRoutes = [
   {
     path: "/table-list",
     name: "Requests",
-    rtlName: "قائمة الجدول",
     icon: "content_paste",
 
     layout: "/admin",
@@ -53,31 +50,13 @@ const dashboardRoutes = [
   {
     path: "/workers",
     name: "Workers",
-    rtlName: "قائمة الجدول",
     icon: "content_paste",
-
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Requests",
-    rtlName: "طباعة",
-    icon: LibraryBooks,
-
-    layout: "/admin",
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
 
     layout: "/admin",
   },
   {
     path: "/maps",
     name: "Maps",
-    rtlName: "خرائط",
     icon: LocationOn,
 
     layout: "/admin",
@@ -85,27 +64,10 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     name: "Notifications",
-    rtlName: "إخطارات",
     icon: Notifications,
 
     layout: "/admin",
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-
-    layout: "/rtl",
-  },
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-
-    layout: "/admin",
-  },
+  }
 ];
 
 export default dashboardRoutes;
