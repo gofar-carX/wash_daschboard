@@ -1,4 +1,5 @@
 import { PrismaClient } from ".prisma/client";
+import { number } from "prop-types";
 
 const prisma = new PrismaClient({log: ["query"]})
 import {authenticated} from "../Auth"
@@ -12,7 +13,7 @@ export default authenticated(async function find(req,res){
 
      const Request = await prisma.request_entity.findMany(
       {include : {user_entity:true,worker_entity:true},
-       where :  {workerId: null}
+        where :  {workerId: Number.POSITIVE_INFINITY }
     }
     )    
     res.json(Request)

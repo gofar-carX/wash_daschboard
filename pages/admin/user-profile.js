@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { toast, ToastContainer } from 'react-nextjs-toast'
 
-
-import InputLabel from "@material-ui/core/InputLabel";
 // layout for this page
 import Admin from "layouts/Admin.js";
 // core components
@@ -13,13 +12,10 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
-import avatar from "assets/img/faces/marc.jpg";
 import axios from "axios";
-import Success from "../../components/Typography/Success";
+// import { useSnackbar } from 'nextjs-toast'
 
 const styles = {
   cardCategoryWhite: {
@@ -41,6 +37,8 @@ const styles = {
 };
 
 function UserProfile() {
+  // const snackbar = useSnackbar()
+
   const useStyles = makeStyles(styles);
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
@@ -95,6 +93,7 @@ axios.post('/api/Workers/createWorkers',{
   
 })
 .then(res=>{
+alert('worker added')
    setAvailable(false)
    setPhone(0)
    setPostionX('')
@@ -102,24 +101,19 @@ axios.post('/api/Workers/createWorkers',{
    setName('')
    setEmail('')
    setPassword('')
-
-   return(
-  <Success />
-
-   )
+console.log(res)
+  //  snackbar.showMessage(
+  //   "This is the Massage",
+  //   "error",
+  //   "filled",
+  // );
 
 }
 )
 .catch((err)=>{
-  return(
-    <Stack sx={{ width: '100%' }} spacing={2}>
+ console.log(err);
 
-    <Alert severity="error">This is an error alert — check it out!</Alert>
-    </Stack>
-
-   
-
-)})
+})
 
   }
   const classes = useStyles();

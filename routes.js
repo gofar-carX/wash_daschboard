@@ -24,6 +24,8 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
+import { History, RemoveFromQueue } from "@material-ui/icons";
+// import HistoryIcon from '@mui/icons-material/History';
 
 const dashboardRoutes = [
   {
@@ -43,10 +45,18 @@ const dashboardRoutes = [
   {
     path: "/table-list",
     name: "Requests",
-    icon: "content_paste",
+    icon: RemoveFromQueue,
 
     layout: "/admin",
   },
+  {
+    path: "/userlist",
+    name: "Users",
+    icon: RemoveFromQueue,
+
+    layout: "/admin",
+  }
+  ,
   {
     path: "/workers",
     name: "Workers",
@@ -65,6 +75,13 @@ const dashboardRoutes = [
     path: "/notifications",
     name: "Notifications",
     icon: Notifications,
+
+    layout: "/admin",
+  },
+  {
+    path: "/History",
+    name: "History",
+    icon: History,
 
     layout: "/admin",
   }
