@@ -11,7 +11,7 @@ export default  authenticated(async function find(req,res){
 
      const Worker = await prisma.worker_entity.findMany()
   
-    res.send(Worker)
+    res.json(Worker)
      
    }catch(e){
    console.log(e)

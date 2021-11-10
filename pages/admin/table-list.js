@@ -14,6 +14,9 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
+import {MyGet} from "./MyGet"
+
+
 
 const styles = {
   cardCategoryWhite: {
@@ -98,3 +101,9 @@ function TableList() {
 TableList.layout = Admin;
 
 export default TableList;
+
+
+TableList.getInitialProps = async (ctx) =>{
+  const json = await MyGet( "http://localhost:3000/api/Request/findAllRequest",ctx)
+return {people : json}
+}
