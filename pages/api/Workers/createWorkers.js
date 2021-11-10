@@ -2,7 +2,7 @@ import { PrismaClient } from ".prisma/client";
 
 const prisma = new PrismaClient({log: ["query"]})
 
-export default async function create(req,res){
+export default  authenticated(async function create(req,res){
     if(req.method === "POST"){
   console.log(req.body)
    try {
@@ -25,4 +25,4 @@ export default async function create(req,res){
   else {
       res.status(504).json('method should be POST')
   }
-}
+})

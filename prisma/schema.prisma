@@ -18,18 +18,18 @@ model admin_entity {
 model request_entity {
   id            Int            @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
   service       String?        @db.VarChar
+  positionx     String         @db.VarChar
+  positiony     String         @db.VarChar
   typeOfCar     String         @db.VarChar
   typeOfWash    String         @db.VarChar
-  createdAt     DateTime       @default(now()) @db.Timestamp(6)
-  userId        Int?
   isPayed       Boolean        @default(false)
   Price         String?        @db.VarChar
   paymentDate   DateTime?      @db.Timestamp(6)
-  workerId      Int?
-  positionx     String         @db.VarChar
-  positiony     String         @db.VarChar
   isServed      Boolean        @default(false)
   duration      String?        @db.VarChar
+  createdAt     DateTime       @default(now()) @db.Timestamp(6)
+  workerId      Int?
+  userId        Int?
   user_entity   user_entity?   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_f343ae3808ceeb792a971c3e006")
   worker_entity worker_entity? @relation(fields: [workerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_0d372dc9ed938a6c635b055b1dd")
 }
@@ -46,8 +46,8 @@ model user_entity {
   name           String?          @db.VarChar
   email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @db.VarChar
   phone          Int?
-  createdAts     DateTime         @default(now()) @db.Timestamp(6)
   photo          String?          @db.VarChar
+  createdAts     DateTime         @default(now()) @db.Timestamp(6)
   request_entity request_entity[]
 }
 
@@ -56,9 +56,10 @@ model worker_entity {
   name           String           @db.VarChar
   email          String           @db.VarChar
   phone          Int
-  createdAts     DateTime         @default(now()) @db.Timestamp(6)
   positionx      String           @db.VarChar
   positiony      String           @db.VarChar
   isAvailable    Boolean          @default(false)
+  createdAts     DateTime         @default(now()) @db.Timestamp(6)
+  password       String           @db.VarChar
   request_entity request_entity[]
 }
