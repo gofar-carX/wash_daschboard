@@ -3,7 +3,7 @@ import { PrismaClient } from ".prisma/client";
 
 const prisma = new PrismaClient({log: ["query"]})
 
-export default async function update(req,res){
+export default authenticated(async function update(req,res){
   
    try {
      const  requestId  = req.body.requestID
@@ -46,4 +46,4 @@ export default async function update(req,res){
     prisma.$disconnect()
    }
 
-}
+})

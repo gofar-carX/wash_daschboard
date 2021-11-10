@@ -2,7 +2,7 @@ import { PrismaClient } from ".prisma/client";
 
 const prisma = new PrismaClient({log: ["query"]})
 
-export default async function find(req,res){
+export default authenticated(async function find(req,res){
   
    try {
      const  request  = req.body 
@@ -23,4 +23,4 @@ export default async function find(req,res){
     prisma.$disconnect()
       }
 
-}
+})
