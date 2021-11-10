@@ -49,6 +49,7 @@ function WorkerAvailabe(props) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
+  
   useEffect(()=>{
     axios.get('/api/Workers/findAvailable')
     .then((res)=>{
@@ -63,6 +64,19 @@ function WorkerAvailabe(props) {
    return (x)
 
   }
+  
+  function assigned(e){
+     var worker =  tab.filter(element=> element.id == e.target.id)[0]
+     worker.isAvailable = false
+    console.log(e.target.className)
+     axios.put('/api/Request/updateRequest', {
+           worker : worker,
+           requestID: router.query.id, 
+           temp : (Number(e.target.className) / 50) * 60
+     })
+  }
+
+
   return (
     <GridContainer>
       {/* {console.log(router.query)} */}
@@ -79,10 +93,10 @@ function WorkerAvailabe(props) {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Availability","temps"]}
-                tableData={tab?.map((e) => (
-                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`]
-                ))
+                tableHead={["ID", "Name", "Availability","distance","assigned"]}
+                tableData={Array.isArray(tab)? tab?.map((e) => (
+                       [e.id, e.name,`${e.isAvailable}`,`${distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)}km`,<button id={e.id} onClick={assigned} className={distance(router.query.Positiony,e.positiony,e.positionx,router.query.Positionx)} >assgined</button>]
+                )).sort((a,b) =>  parseFloat(a[3]) - parseFloat(b[3])).filter((e,i)=> i<3   ) : null
                 }
               />
             </CardBody>

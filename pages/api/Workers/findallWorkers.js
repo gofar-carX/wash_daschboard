@@ -3,7 +3,7 @@ import {authenticated} from "../Auth"
 
 const prisma = new PrismaClient({log: ["query"]})
 
-export default async function find(req,res){
+export default  authenticated(async function find(req,res){
   
    try {
      const  worker  = req.body 
@@ -11,7 +11,7 @@ export default async function find(req,res){
 
      const Worker = await prisma.worker_entity.findMany()
   
-    res.send(Worker)
+    res.json(Worker)
      
    }catch(e){
    console.log(e)
@@ -20,4 +20,4 @@ export default async function find(req,res){
     prisma.$disconnect()
       }
 
-}
+})

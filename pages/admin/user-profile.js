@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
+import { toast, ToastContainer } from 'react-nextjs-toast'
+
 // layout for this page
 import Admin from "layouts/Admin.js";
 // core components
@@ -11,12 +12,10 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
-import avatar from "assets/img/faces/marc.jpg";
 import axios from "axios";
+// import { useSnackbar } from 'nextjs-toast'
 
 const styles = {
   cardCategoryWhite: {
@@ -38,6 +37,8 @@ const styles = {
 };
 
 function UserProfile() {
+  // const snackbar = useSnackbar()
+
   const useStyles = makeStyles(styles);
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
@@ -45,6 +46,8 @@ function UserProfile() {
   const [PostionX,setPostionX]=useState('')
   const [PostionY,setPostionY]=useState('')
   const [Available,setAvailable]=useState('')
+  const [password,setPassword]=useState('')
+
 function changename(e){
   setName(e.target.value)
   console.log(name)
@@ -75,6 +78,9 @@ function changeAvailable(e) {
   console.log(e.target.checked)
   setAvailable(e.target.checked)
 }
+function changePassword(e) {
+  setPassword(e.target.value)
+}
  function  addworker(){
 axios.post('/api/Workers/createWorkers',{
   name:name,
@@ -82,19 +88,32 @@ axios.post('/api/Workers/createWorkers',{
   positionx:PostionX,
   positiony:PostionY,
   phone:Number(phone),
-  isAvailable: Boolean(Available)
+  isAvailable: Boolean(Available),
+  password:password
   
 })
 .then(res=>{
+alert('worker added')
    setAvailable(false)
    setPhone(0)
    setPostionX('')
    setPostionY('')
    setName('')
    setEmail('')
+   setPassword('')
+console.log(res)
+  //  snackbar.showMessage(
+  //   "This is the Massage",
+  //   "error",
+  //   "filled",
+  // );
+
 }
 )
-.catch((err)=>console.log(err))
+.catch((err)=>{
+ console.log(err);
+
+})
 
   }
   const classes = useStyles();
@@ -188,6 +207,20 @@ axios.post('/api/Workers/createWorkers',{
                       type: "checkbox",
                       placeholder: "Latitude",
                       onChange:changeAvailable
+                    }}
+                    formControlProps={{
+                      fullWidth: true,
+                    }}
+                  />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={4}>
+                  <CustomInput
+                    labelText="Password"
+                    inputProps={{
+                      value:`${password}`,
+                      type:"password",
+                      placeholder: "password",
+                      onChange:changePassword
                     }}
                     formControlProps={{
                       fullWidth: true,

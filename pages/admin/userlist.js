@@ -14,9 +14,6 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
-import {MyGet} from "./MyGet"
-
-
 
 const styles = {
   cardCategoryWhite: {
@@ -49,12 +46,12 @@ const styles = {
 };
 
 
-function TableList() {
+function Userlist() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
   useEffect(()=>{
-    axios.get('/api/Request/findAllRequest')
+    axios.get('/api/Users/findAllUsers')
     .then((res)=>{
       console.log(res.data)
       setTab(res.data)
@@ -74,20 +71,14 @@ function TableList() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","accepter"]}
+              tableHead={["name", "email", "phone","accepter"]}
 
               tableData={
-                tab?.map((e)=>(
+                Array.isArray(tab)? tab?.map((e)=>(
                   
-                  [e.service, e.typeOfCar, e.typeOfWash, `${e.isPayed? e.isPayed: 0 }`,`${e.isServed}`,e.Price ,e.createdAt.slice(0,10),e.createdAt.slice(11,16),<button onClick={()=> { router.push({
-                   pathname: './workersAvailable',
-                   query : {Positiony : e.positiony,
-                            Positionx: e.positionx ,
-                            id: e.id            
-                   }
-                  })} } >accepter</button>]
+                  [e.name, e.email, e.phone,<button  >Delete</button>]
 
-                ))
+                )): null
               
               }
             />
@@ -98,12 +89,6 @@ function TableList() {
   );
 }
 
-TableList.layout = Admin;
+Userlist.layout = Admin;
 
-export default TableList;
-
-
-TableList.getInitialProps = async (ctx) =>{
-  const json = await MyGet( "http://localhost:3000/api/Request/findAllRequest",ctx)
-return {people : json}
-}
+export default Userlist;

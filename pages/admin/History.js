@@ -14,9 +14,6 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
-import {MyGet} from "./MyGet"
-
-
 
 const styles = {
   cardCategoryWhite: {
@@ -49,12 +46,12 @@ const styles = {
 };
 
 
-function TableList() {
+function History() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
   useEffect(()=>{
-    axios.get('/api/Request/findAllRequest')
+    axios.get('/api/Request/historyrequest')
     .then((res)=>{
       console.log(res.data)
       setTab(res.data)
@@ -98,12 +95,6 @@ function TableList() {
   );
 }
 
-TableList.layout = Admin;
+History.layout = Admin;
 
-export default TableList;
-
-
-TableList.getInitialProps = async (ctx) =>{
-  const json = await MyGet( "http://localhost:3000/api/Request/findAllRequest",ctx)
-return {people : json}
-}
+export default History;
