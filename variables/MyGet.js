@@ -17,7 +17,7 @@ export async function MyGet (url,ctx){
   
     if(resp.status === 500 && ctx.req){
       ctx.res?.writeHead(302,{
-        Location: "http://localhost:3000/admin/Login"
+        Location: "/admin/Login"
       })
       ctx.res?.end()
       return;

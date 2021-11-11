@@ -209,6 +209,6 @@ Dashboard.layout = Admin;
 export default Dashboard;
 
 Dashboard.getInitialProps = async (ctx) =>{
-    const json = await MyGet( "http://localhost:3000/api/Workers/findallWorkers",ctx)
+    const json = await MyGet( "/api/Workers/findallWorkers",ctx)
   return {people : json}
 }
