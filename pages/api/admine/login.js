@@ -7,13 +7,15 @@ export default async function login(req,res){
     if(req.method === "POST"){
    try {
      const  admin  = req.body 
-     console.log(admin)
+ 
      const Admin = await prisma.admin_entity.findUnique({
        where: {
          email: admin.email,
         },
       })
+    
      compare(admin.password, Admin.password, function(err, result) {
+       
         if(!err && result ){
           const claims = {sub:Admin.id, admin: Admin.name}
           const jwt = sign(claims,process.env.SECRET,{ expiresIn: '10h' }) 

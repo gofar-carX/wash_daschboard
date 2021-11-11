@@ -14,7 +14,7 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
-import {MyGet} from "./MyGet"
+import {MyGet} from "variables/MyGet"
 
 
 
@@ -56,7 +56,7 @@ function TableList() {
   useEffect(()=>{
     axios.get('/api/Request/findAllRequest')
     .then((res)=>{
-      console.log(res.data)
+     
       setTab(res.data)
     })
    },[])

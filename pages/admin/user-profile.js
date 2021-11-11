@@ -50,32 +50,32 @@ function UserProfile() {
 
 function changename(e){
   setName(e.target.value)
-  console.log(name)
+  
 
 }
 function changeemail(e){
 
   setEmail(e.target.value)
-  console.log(email)
+ 
 
 }
 function changePhone(e){
-  console.log(phone)
+ 
 
   setPhone(e.target.value)
 }
 function changePostionX(e){
-  console.log(PostionX)
+ 
 
   setPostionX(e.target.value)
 }
 function changePostionY(e){
-  console.log(PostionY)
+ 
 
   setPostionY(e.target.value)
 }
 function changeAvailable(e) {
-  console.log(e.target.checked)
+  
   setAvailable(e.target.checked)
 }
 function changePassword(e) {
@@ -101,7 +101,7 @@ alert('worker added')
    setName('')
    setEmail('')
    setPassword('')
-console.log(res)
+
   //  snackbar.showMessage(
   //   "This is the Massage",
   //   "error",

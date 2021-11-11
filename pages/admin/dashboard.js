@@ -31,7 +31,7 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { bugs, website, server } from "variables/general.js";
-import {MyGet} from "./MyGet"
+import {MyGet} from "variables/MyGet"
 
 import {
   dailySalesChart,

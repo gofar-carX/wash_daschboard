@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import Router from "next/router"
 
 
  const Login = () => {
@@ -21,8 +21,12 @@ import React,{useState} from 'react';
 
        } )
        const json = await resp.json()
-
+         
         setMessage(json)
+      if(message.message ==='welcome' ){
+        Router.replace("/admin/dashboard")
+      }
+
     };
     return (
         

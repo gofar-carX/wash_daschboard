@@ -7,6 +7,7 @@ const path = require("path");
 
 module.exports = withPlugins([[withSass], [withImages], [withCSS]], {
   webpack(config, options) {
+    config.optimization.minimizer = [];
     config.resolve.modules.push(path.resolve("./"));
     return config;
   },
