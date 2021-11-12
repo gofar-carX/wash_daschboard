@@ -64,13 +64,7 @@ const dashboardRoutes = [
 
     layout: "/admin",
   },
-  {
-    path: "/maps",
-    name: "Maps",
-    icon: LocationOn,
-
-    layout: "/admin",
-  },
+  
   {
     path: "/notifications",
     name: "Notifications",

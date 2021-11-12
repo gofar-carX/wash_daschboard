@@ -4,12 +4,12 @@ import Router from "next/router"
 
  const Login = () => {
      const [message, setMessage] = useState('')
-    async function handleFormSubmit(e) {
+   function handleFormSubmit(e) {
         e.preventDefault();
 
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
-       const resp = await fetch('/api/admine/login', { 
+       fetch('/api/admine/login', { 
            method: 'POST',
            headers: {
                'Content-type' : 'application/json'
@@ -20,12 +20,19 @@ import Router from "next/router"
            })
 
        } )
-       const json = await resp.json()
-         
-        setMessage(json)
-      if(message.message ==='welcome' ){
-        Router.replace("/admin/dashboard")
-      }
+       .then((res)=> res.json())
+
+        .then((data)=>{
+        if(data.message=== 'welcome' ){
+            Router.replace("/admin/dashboard")
+          }
+       })
+    .catch((err)=>{
+            console.log(err)
+    })
+      
+
+  
 
     };
     return (

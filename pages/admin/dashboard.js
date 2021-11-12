@@ -31,7 +31,7 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { bugs, website, server } from "variables/general.js";
-import {MyGet} from "variables/MyGet"
+import { MyGet } from "variables/MyGet";
 
 import {
   dailySalesChart,
@@ -41,15 +41,12 @@ import {
 
 import styles from "assets/jss/nextjs-material-dashboard/views/dashboardStyle.js";
 
-
-function Dashboard({people,status}) {
+function Dashboard({ people, status }) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
- 
+
   return (
     <div>
-     
-            
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
@@ -204,11 +201,11 @@ function Dashboard({people,status}) {
   );
 }
 
-Dashboard.layout = Admin;
-
+export const getServerSideProps = (ctx) => {
+  return MyGet("/api/Workers/findallWorkers", ctx).then((res) => {
+    console.log(res,typeof res)
+    return ({
+    props: res,
+  })});
+};
 export default Dashboard;
-
-Dashboard.getInitialProps = async (ctx) =>{
-    const json = await MyGet( "/api/Workers/findallWorkers",ctx)
-  return {people : json}
-}

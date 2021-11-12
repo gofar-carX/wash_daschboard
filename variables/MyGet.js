@@ -1,28 +1,18 @@
+import axios from "axios";
+import Router from "next/router";
 
-import Router from "next/router"
-
-
-export async function MyGet (url,ctx){
-    const cookie =  ctx.req?.headers.cookie
-    const resp = await fetch(url,{
+export async function MyGet(url, ctx) {
+  const cookie = ctx.req?.headers.cookie;
+  try {
+    const { data } = axios.get(url, {
       headers: {
-         cookie: cookie
-       }
-    })
-   
-    if(resp.status === 500 && !ctx.req ){
-    Router.replace("/admin/Login")
-    return{}
-    }
-  
-    if(resp.status === 500 && ctx.req){
-      ctx.res?.writeHead(302,{
-        Location: "/admin/Login"
-      })
-      ctx.res?.end()
-      return;
-    }
-    
-    const json = await resp.json()
-    return  json
+        cookie: cookie,
+      },
+    });
+    console.log({ data });
+    return data;
+  } catch (error) {
+    console.log(err);
+    Router.replace("/admin/Login");
+  }
 }
