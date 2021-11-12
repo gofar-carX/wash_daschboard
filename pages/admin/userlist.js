@@ -14,6 +14,7 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -92,3 +93,7 @@ function Userlist() {
 Userlist.layout = Admin;
 
 export default Userlist;
+Userlist.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

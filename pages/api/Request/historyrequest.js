@@ -14,9 +14,10 @@ export default authenticated(async function find(req,res){
       
       const Request = await prisma.request_entity.findMany(
         {include : {user_entity:true,worker_entity:true},
-        where :  {workerId: Number.POSITIVE_INFINITY }
+        where:{NOT :  {workerId: null}}
       }
       )    
+     
       res.json(Request)
       
     }catch(e){

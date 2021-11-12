@@ -14,12 +14,12 @@ export default authenticated(async function update(req,res){
       
        
         
-              
+              console.log(requestId)
         const Request = await prisma.request_entity.update(
           {
-            where: {id : request.id },
+            where: {id : Number(requestId) },
             data :  {
-              wokerId : worker.id, 
+              workerId : worker.id, 
               duration : `${temp} min`
             }
           }

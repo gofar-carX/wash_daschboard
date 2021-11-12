@@ -1,15 +1,16 @@
 import React,{useState} from 'react';
 import Router from "next/router"
-
+import 'tailwindcss/tailwind.css'
+import { autho } from '../../variables/logout';
 
  const Login = () => {
      const [message, setMessage] = useState('')
-    async function handleFormSubmit(e) {
+   function handleFormSubmit(e) {
         e.preventDefault();
 
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
-       const resp = await fetch('/api/admine/login', { 
+       fetch('/api/admine/login', { 
            method: 'POST',
            headers: {
                'Content-type' : 'application/json'
@@ -20,12 +21,22 @@ import Router from "next/router"
            })
 
        } )
-       const json = await resp.json()
-         
-        setMessage(json)
-      if(message.message ==='welcome' ){
-        Router.replace("/admin/dashboard")
-      }
+       .then((res)=> res.json())
+
+        .then((data)=>{
+
+
+    
+        if(data.message=== 'welcome' ){
+            Router.replace("/admin/dashboard")
+          }
+       })
+    .catch((err)=>{
+            console.log(err)
+    })
+      
+
+  
 
     };
     return (
@@ -59,7 +70,7 @@ import Router from "next/router"
 
                     <div className='flex justify-center items-center mt-6'>
                         <button
-                            className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
+                            className={`bg-green-500 py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
                         >
                             Login
                         </button>
@@ -71,3 +82,7 @@ import Router from "next/router"
 };
 
 export default Login;
+Login.getInitialProps = async (ctx) =>{
+    const json = await autho( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

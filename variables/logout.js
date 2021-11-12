@@ -2,7 +2,7 @@
 import Router from "next/router"
 
 
-export async function MyGet (url,ctx){
+export async function autho(url,ctx){
     const cookie =  ctx.req?.headers.cookie
     const resp = await fetch(url,{
       headers: {
@@ -10,14 +10,14 @@ export async function MyGet (url,ctx){
        }
     })
    
-    if(resp.status !== 200 && !ctx.req ){
-    Router.replace("/admin/Login")
+    if(resp.status === 200 && !ctx.req ){
+    Router.replace("/admin/dashborad")
     return{}
     }
   
-    if(resp.status !== 200 && ctx.req){
+    if(resp.status === 200 && ctx.req){
       ctx.res?.writeHead(302,{
-        Location: "/admin/Login"
+        Location: "/admin/dashborad"
       })
       ctx.res?.end()
       return;
