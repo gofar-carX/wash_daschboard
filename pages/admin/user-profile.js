@@ -16,6 +16,7 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
 // import { useSnackbar } from 'nextjs-toast'
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -242,3 +243,7 @@ alert('worker added')
 UserProfile.layout = Admin;
 
 export default UserProfile;
+UserProfile.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

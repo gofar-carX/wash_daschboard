@@ -77,17 +77,17 @@ function TableList() {
               tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","accepter"]}
 
               tableData={
-                tab?.map((e)=>(
+                Array.isArray(tab)?  tab?.map((e)=>(
                   
                   [e.service, e.typeOfCar, e.typeOfWash, `${e.isPayed? e.isPayed: 0 }`,`${e.isServed}`,e.Price ,e.createdAt.slice(0,10),e.createdAt.slice(11,16),<button onClick={()=> { router.push({
                    pathname: './workersAvailable',
                    query : {Positiony : e.positiony,
                             Positionx: e.positionx ,
                             id: e.id            
-                   }
+                   } 
                   })} } >accepter</button>]
 
-                ))
+                )) : null
               
               }
             />

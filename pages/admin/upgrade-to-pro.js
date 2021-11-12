@@ -15,6 +15,7 @@ import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -215,3 +216,7 @@ function UpgradeToPro() {
 UpgradeToPro.layout = Admin;
 
 export default UpgradeToPro;
+UpgradeToPro.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

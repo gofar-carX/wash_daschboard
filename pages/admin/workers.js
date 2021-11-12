@@ -12,6 +12,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import axios from "axios";
 import { Button } from "@material-ui/core";
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -86,3 +87,7 @@ function TableList() {
 TableList.layout = Admin;
 
 export default TableList;
+TableList.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

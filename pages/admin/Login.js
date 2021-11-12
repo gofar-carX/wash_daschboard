@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import Router from "next/router"
-
+import 'tailwindcss/tailwind.css'
+import { autho } from '../../variables/logout';
 
  const Login = () => {
      const [message, setMessage] = useState('')
@@ -23,6 +24,9 @@ import Router from "next/router"
        .then((res)=> res.json())
 
         .then((data)=>{
+
+
+    
         if(data.message=== 'welcome' ){
             Router.replace("/admin/dashboard")
           }
@@ -66,7 +70,7 @@ import Router from "next/router"
 
                     <div className='flex justify-center items-center mt-6'>
                         <button
-                            className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
+                            className={`bg-green-500 py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
                         >
                             Login
                         </button>
@@ -78,3 +82,7 @@ import Router from "next/router"
 };
 
 export default Login;
+Login.getInitialProps = async (ctx) =>{
+    const json = await autho( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

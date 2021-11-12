@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{ useEffect, useState }from "react";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -31,8 +31,8 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import { bugs, website, server } from "variables/general.js";
-import { MyGet } from "variables/MyGet";
-
+import {MyGet} from "variables/MyGet"
+import axios from "axios"
 import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -41,12 +41,38 @@ import {
 
 import styles from "assets/jss/nextjs-material-dashboard/views/dashboardStyle.js";
 
-function Dashboard({ people, status }) {
+
+function Dashboard({people,status}) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
+  const [tab1,setTab1]=useState([])
+  const [tab2,setTab2]=useState([])
+  const [tab3,setTab3]=useState([])
 
+  useEffect(() => {
+   axios.get('/api/Workers/findallWorkers') 
+   .then((res)=>{
+     setTab1(res.data)
+   })
+   .catch((err)=>
+   console.log(err))
+   axios.get('/api/Users/findAllUsers') 
+   .then((res)=>{
+     setTab2(res.data)
+   })
+   .catch((err)=>
+   console.log(err))
+   axios.get('/api/Workers/findAvaible') 
+   .then((res)=>{
+     setTab3(res.data)
+   })
+   .catch((err)=>
+   console.log(err))
+  }, [])
   return (
     <div>
+     
+            
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
@@ -77,8 +103,8 @@ function Dashboard({ people, status }) {
               <CardIcon color="dark">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
+              <p className={classes.cardCategory}>Users</p>
+              <h3 className={classes.cardTitle}>{tab2.length}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -94,8 +120,8 @@ function Dashboard({ people, status }) {
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <p className={classes.cardCategory}>Avaible Workers</p>
+              <h3 className={classes.cardTitle}>{tab3.length}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -111,8 +137,8 @@ function Dashboard({ people, status }) {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Workers</p>
+              <h3 className={classes.cardTitle}>{tab1.length}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -201,11 +227,12 @@ function Dashboard({ people, status }) {
   );
 }
 
-export const getServerSideProps = (ctx) => {
-  return MyGet("/api/Workers/findallWorkers", ctx).then((res) => {
-    console.log(res,typeof res)
-    return ({
-    props: res,
-  })});
-};
+Dashboard.layout = Admin;
+
 export default Dashboard;
+
+Dashboard.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}
+// http://localhost:3000/admin/undefined/api/Workers/findallWorkers
