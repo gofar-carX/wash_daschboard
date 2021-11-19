@@ -62,7 +62,7 @@ function WorkerAvailabe(props) {
      var result=(wy-uy)+Math.cos(wy)*Math.cos(uy)*(wx-ux)
      var x= result.toFixed(2);
 
-   return (x)
+   return (Math.abs(x))
 
   }
   
@@ -89,7 +89,7 @@ function WorkerAvailabe(props) {
             <CardHeader color="warning">
               <h4 className={classes.cardTitleWhite}>Employees</h4>
               <p className={classes.cardCategoryWhite}>
-               All Our Workers
+               All Our Workers Avaible
               </p>
             </CardHeader>
             <CardBody>

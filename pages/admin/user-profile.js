@@ -119,7 +119,9 @@ alert('worker added')
   }
   const classes = useStyles();
   return (
-    <div>
+    <div className='flex flex-row'>
+      <div className='w-3/12'></div>
+      <div className='w-6/12'>
       <GridContainer>
         <GridItem  >
           <Card>
@@ -132,9 +134,10 @@ alert('worker added')
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
                     labelText="Name"
+                   
                     inputProps={{
                       value:`${name}`,
-                      placeholder: "Name",
+                    
                       onChange:changename
                     }}
               
@@ -150,7 +153,7 @@ alert('worker added')
                     inputProps={{
                       value:`${phone}`,
                       type:"number",
-                      placeholder: "Phone",
+                     
                       onChange:changePhone
                     }}
 
@@ -164,7 +167,7 @@ alert('worker added')
                     labelText="Email address"
                     inputProps={{
                       value:`${email}`,
-                      placeholder: "Email",
+                      
                       onChange:changeemail
                     }}
                     formControlProps={{
@@ -174,39 +177,14 @@ alert('worker added')
                 </GridItem>
               </GridContainer>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="PostionX"
-                    inputProps={{
-                      value:`${PostionX}`,
-                      placeholder: "Longitude",
-                      onChange:changePostionX
-                    }}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                     labelText="PostionY"
-                     inputProps={{
-                      value:`${PostionY}`,
-                      placeholder: "Latitude",
-                      onChange:changePostionY
-                    }}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
+             
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                      labelText="Available"
                      inputProps={{
                       value:`${Available}`,
                       type: "checkbox",
-                      placeholder: "Latitude",
+                     
                       onChange:changeAvailable
                     }}
                     formControlProps={{
@@ -214,9 +192,9 @@ alert('worker added')
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={48} md={4}>
                   <CustomInput
-                    labelText="Password"
+                  
                     inputProps={{
                       value:`${password}`,
                       type:"password",
@@ -231,11 +209,12 @@ alert('worker added')
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick={()=>addworker()}>Update Profile</Button>
+              <Button color="primary" onClick={()=>addworker()}>Add Worker</Button>
             </CardFooter>
           </Card>
         </GridItem>
       </GridContainer>
+      </div>
     </div>
   );
 }

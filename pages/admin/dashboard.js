@@ -13,24 +13,21 @@ import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
 import Accessibility from "@material-ui/icons/Accessibility";
-import BugReport from "@material-ui/icons/BugReport";
-import Code from "@material-ui/icons/Code";
-import Cloud from "@material-ui/icons/Cloud";
+
+import Router from "next/router"
+
 // layout for this page
 import Admin from "layouts/Admin.js";
 // core components
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import Table from "components/Table/Table.js";
-import Tasks from "components/Tasks/Tasks.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
+
 import Danger from "components/Typography/Danger.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-import { bugs, website, server } from "variables/general.js";
 import {MyGet} from "variables/MyGet"
 import axios from "axios"
 import {
@@ -45,10 +42,17 @@ import styles from "assets/jss/nextjs-material-dashboard/views/dashboardStyle.js
 function Dashboard({people,status}) {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
+  //allworkers
   const [tab1,setTab1]=useState([])
-  const [tab2,setTab2]=useState([])
-  const [tab3,setTab3]=useState([])
+    //allusers
 
+  const [tab2,setTab2]=useState([])
+    //allAvailbleworkers
+
+  const [tab3,setTab3]=useState([])
+      //allRequest
+
+  const [tab4,setTab4]=useState([])
   useEffect(() => {
    axios.get('/api/Workers/findallWorkers') 
    .then((res)=>{
@@ -62,27 +66,38 @@ function Dashboard({people,status}) {
    })
    .catch((err)=>
    console.log(err))
-   axios.get('/api/Workers/findAvaible') 
+   axios.get('/api/Workers/findAvailable') 
    .then((res)=>{
+     console.log(res.data);
      setTab3(res.data)
    })
    .catch((err)=>
    console.log(err))
+   axios.get('/api/Request/findAllRequest') 
+   .then((res)=>{
+     console.log(res.data);
+     setTab4(res.data)
+   })
+   .catch((err)=>
+   console.log(err))
+  
   }, [])
+  
   return (
     <div>
      
             
       <GridContainer>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="warning" stats icon>
+        <GridItem xs={12} sm={6} md={3} onClick={()=>Router.replace("/admin/table-list")}>
+          <Card >
+            
+            <CardHeader color="warning" stats icon >
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
+              <p className={classes.cardCategory}>All Requests</p>
               <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
+               {tab4.length}
               </h3>
             </CardHeader>
             <CardFooter stats>

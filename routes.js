@@ -78,7 +78,10 @@ const dashboardRoutes = [
     icon: History,
 
     layout: "/admin",
-  }
+  },
+
+  
+ 
 ];
 
 export default dashboardRoutes;
