@@ -55,7 +55,7 @@ model user_entity {
   id             Int              @id(map: "PK_b54f8ea623b17094db7667d8206") @default(autoincrement())
   name           String           @default("") @db.VarChar
   email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @default("") @db.VarChar
-  phone          Int              @default(0)
+  phone          Int?
   photo          String?          @db.VarChar
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   request_entity request_entity[]
@@ -67,9 +67,9 @@ model worker_entity {
   name           String           @db.VarChar
   email          String           @db.VarChar
   phone          Int
-  positionx      String           @db.VarChar
-  positiony      String           @db.VarChar
-  password       String           @db.VarChar
+  positionx      String?          @db.VarChar
+  positiony      String?          @db.VarChar
+  password       String?          @db.VarChar
   isAvailable    Boolean          @default(false)
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   request_entity request_entity[]

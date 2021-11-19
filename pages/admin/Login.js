@@ -26,7 +26,7 @@ import { autho } from '../../variables/logout';
         .then((data)=>{
 
 
-    
+            console.log(data.message);
         if(data.message=== 'welcome' ){
             Router.replace("/admin/dashboard")
           }
@@ -41,7 +41,7 @@ import { autho } from '../../variables/logout';
     };
     return (
         
-        <div className='h-screen flex bg-gray-bg1'>
+        <div className='h-screen flex bg-gray-500'>
            
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
@@ -70,6 +70,7 @@ import { autho } from '../../variables/logout';
 
                     <div className='flex justify-center items-center mt-6'>
                         <button
+                        
                             className={`bg-green-500 py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
                         >
                             Login

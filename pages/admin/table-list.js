@@ -66,15 +66,15 @@ function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>ALL Requests</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              All Request from Users
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","accepter"]}
+              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","Assign worker"]}
 
               tableData={
                 Array.isArray(tab)?  tab?.map((e)=>(
@@ -85,7 +85,7 @@ function TableList() {
                             Positionx: e.positionx ,
                             id: e.id            
                    } 
-                  })} } >accepter</button>]
+                  })} } >Assign</button>]
 
                 )) : null
               
