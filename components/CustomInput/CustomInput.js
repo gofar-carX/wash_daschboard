@@ -52,6 +52,7 @@ export default function CustomInput(props) {
         </InputLabel>
       ) : null}
       <Input
+      style={{ height:50}}
         classes={{
           root: marginTop,
           

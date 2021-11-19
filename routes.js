@@ -78,7 +78,8 @@ const dashboardRoutes = [
     icon: History,
 
     layout: "/admin",
-  }
+  },
+
   
  
 ];

@@ -91,7 +91,7 @@ export default function Sidebar(props) {
         );
       })}
 
-       <button classNames="" onClick={()=>{logout();router.push('admin/login')}}>Logout</button>
+       <button   style={{opacity:0.2, textColor:"white",textAlign:"center" , marginLeft:40, width:200,height:50,textSizeAdjust:50}}  onClick={()=>{logout();router.push('admin/login')}}>Logout</button>
     </List>
   );
   var brand = (
