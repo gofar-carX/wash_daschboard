@@ -14,6 +14,7 @@ import Danger from "components/Typography/Danger.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   typo: {
@@ -165,3 +166,7 @@ function TypographyPage() {
 TypographyPage.layout = Admin;
 
 export default TypographyPage;
+TypographyPage.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

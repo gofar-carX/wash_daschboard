@@ -15,18 +15,27 @@ model admin_entity {
   createdAts DateTime @default(now()) @db.Timestamp(6)
 }
 
+model paiment_entity {
+  id         Int      @id(map: "PK_4ff60f6e17509fecb91302a8cd1") @default(autoincrement())
+  firstname  String?  @db.VarChar
+  lastname   String?  @unique(map: "UQ_7812be73936d15e957b4c79f853") @db.VarChar
+  email      String?  @unique(map: "UQ_52a340760edc87aa54dcb646942") @db.VarChar
+  phone      String?  @unique(map: "UQ_e1a20faba31402c59a3905d1a12") @db.VarChar
+  createdAts DateTime @unique(map: "UQ_c4be9f6347f695b0b452f1b57ff") @default(now()) @db.Timestamp(6)
+}
+
 model request_entity {
   id            Int            @id(map: "PK_414c4dc3ebedd19498f49a802e2") @default(autoincrement())
-  service       String?        @db.VarChar
+  service       String         @default("") @db.VarChar
   positionx     String         @db.VarChar
   positiony     String         @db.VarChar
   typeOfCar     String         @db.VarChar
   typeOfWash    String         @db.VarChar
   isPayed       Boolean        @default(false)
-  Price         String?        @db.VarChar
+  Price         String         @default("") @db.VarChar
   paymentDate   DateTime?      @db.Timestamp(6)
   isServed      Boolean        @default(false)
-  duration      String?        @db.VarChar
+  duration      String         @default("") @db.VarChar
   createdAt     DateTime       @default(now()) @db.Timestamp(6)
   workerId      Int?
   userId        Int?
@@ -35,20 +44,22 @@ model request_entity {
 }
 
 model review_entity {
-  id        Int      @id(map: "PK_5a7a10bab252068bd06d10d49e6") @default(autoincrement())
-  message   String   @db.VarChar
-  user      String   @db.VarChar
-  createdAt DateTime @default(now()) @db.Timestamp(6)
+  id          Int          @id(map: "PK_5a7a10bab252068bd06d10d49e6") @default(autoincrement())
+  message     String       @db.VarChar
+  createdAt   DateTime     @default(now()) @db.Timestamp(6)
+  userId      Int?
+  user_entity user_entity? @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "FK_ceb4e109201f618032fa5483d3f")
 }
 
 model user_entity {
   id             Int              @id(map: "PK_b54f8ea623b17094db7667d8206") @default(autoincrement())
-  name           String?          @db.VarChar
-  email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @db.VarChar
+  name           String           @default("") @db.VarChar
+  email          String?          @unique(map: "UQ_415c35b9b3b6fe45a3b065030f5") @default("") @db.VarChar
   phone          Int?
   photo          String?          @db.VarChar
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
   request_entity request_entity[]
+  review_entity  review_entity[]
 }
 
 model worker_entity {
@@ -56,10 +67,10 @@ model worker_entity {
   name           String           @db.VarChar
   email          String           @db.VarChar
   phone          Int
-  positionx      String           @db.VarChar
-  positiony      String           @db.VarChar
+  positionx      String?          @db.VarChar
+  positiony      String?          @db.VarChar
+  password       String?          @db.VarChar
   isAvailable    Boolean          @default(false)
   createdAts     DateTime         @default(now()) @db.Timestamp(6)
-  password       String           @db.VarChar
   request_entity request_entity[]
 }

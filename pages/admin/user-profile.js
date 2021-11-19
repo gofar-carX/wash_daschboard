@@ -16,6 +16,7 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import axios from "axios";
 // import { useSnackbar } from 'nextjs-toast'
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -50,32 +51,32 @@ function UserProfile() {
 
 function changename(e){
   setName(e.target.value)
-  console.log(name)
+  
 
 }
 function changeemail(e){
 
   setEmail(e.target.value)
-  console.log(email)
+ 
 
 }
 function changePhone(e){
-  console.log(phone)
+ 
 
   setPhone(e.target.value)
 }
 function changePostionX(e){
-  console.log(PostionX)
+ 
 
   setPostionX(e.target.value)
 }
 function changePostionY(e){
-  console.log(PostionY)
+ 
 
   setPostionY(e.target.value)
 }
 function changeAvailable(e) {
-  console.log(e.target.checked)
+  
   setAvailable(e.target.checked)
 }
 function changePassword(e) {
@@ -101,7 +102,7 @@ alert('worker added')
    setName('')
    setEmail('')
    setPassword('')
-console.log(res)
+
   //  snackbar.showMessage(
   //   "This is the Massage",
   //   "error",
@@ -118,7 +119,9 @@ console.log(res)
   }
   const classes = useStyles();
   return (
-    <div>
+    <div className='flex flex-row'>
+      <div className='w-3/12'></div>
+      <div className='w-6/12'>
       <GridContainer>
         <GridItem  >
           <Card>
@@ -131,9 +134,10 @@ console.log(res)
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
                     labelText="Name"
+                   
                     inputProps={{
                       value:`${name}`,
-                      placeholder: "Name",
+                    
                       onChange:changename
                     }}
               
@@ -149,7 +153,7 @@ console.log(res)
                     inputProps={{
                       value:`${phone}`,
                       type:"number",
-                      placeholder: "Phone",
+                     
                       onChange:changePhone
                     }}
 
@@ -163,7 +167,7 @@ console.log(res)
                     labelText="Email address"
                     inputProps={{
                       value:`${email}`,
-                      placeholder: "Email",
+                      
                       onChange:changeemail
                     }}
                     formControlProps={{
@@ -173,39 +177,14 @@ console.log(res)
                 </GridItem>
               </GridContainer>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="PostionX"
-                    inputProps={{
-                      value:`${PostionX}`,
-                      placeholder: "Longitude",
-                      onChange:changePostionX
-                    }}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                     labelText="PostionY"
-                     inputProps={{
-                      value:`${PostionY}`,
-                      placeholder: "Latitude",
-                      onChange:changePostionY
-                    }}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                  />
-                </GridItem>
+             
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                      labelText="Available"
                      inputProps={{
                       value:`${Available}`,
                       type: "checkbox",
-                      placeholder: "Latitude",
+                     
                       onChange:changeAvailable
                     }}
                     formControlProps={{
@@ -213,9 +192,9 @@ console.log(res)
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={48} md={4}>
                   <CustomInput
-                    labelText="Password"
+                  
                     inputProps={{
                       value:`${password}`,
                       type:"password",
@@ -230,11 +209,12 @@ console.log(res)
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick={()=>addworker()}>Update Profile</Button>
+              <Button color="primary" onClick={()=>addworker()}>Add Worker</Button>
             </CardFooter>
           </Card>
         </GridItem>
       </GridContainer>
+      </div>
     </div>
   );
 }
@@ -242,3 +222,7 @@ console.log(res)
 UserProfile.layout = Admin;
 
 export default UserProfile;
+UserProfile.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

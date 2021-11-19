@@ -13,6 +13,7 @@ import CardBody from "components/Card/CardBody.js";
 import axios from "axios";
 import { Button } from "@material-ui/core";
 import router from "next/router";
+import {MyGet} from "variables/MyGet"
 
 const styles = {
   cardCategoryWhite: {
@@ -53,15 +54,15 @@ function WorkerAvailabe(props) {
   useEffect(()=>{
     axios.get('/api/Workers/findAvailable')
     .then((res)=>{
-      console.log(res.data)
       setTab(res.data)
+      
     })
    },[])
    function distance( wx,wy,ux,uy){
      var result=(wy-uy)+Math.cos(wy)*Math.cos(uy)*(wx-ux)
      var x= result.toFixed(2);
 
-   return (x)
+   return (Math.abs(x))
 
   }
   
@@ -74,6 +75,7 @@ function WorkerAvailabe(props) {
            requestID: router.query.id, 
            temp : (Number(e.target.className) / 50) * 60
      })
+     router.push('admin/table-list')
   }
 
 
@@ -87,7 +89,7 @@ function WorkerAvailabe(props) {
             <CardHeader color="warning">
               <h4 className={classes.cardTitleWhite}>Employees</h4>
               <p className={classes.cardCategoryWhite}>
-               All Our Workers
+               All Our Workers Avaible
               </p>
             </CardHeader>
             <CardBody>
@@ -109,3 +111,7 @@ function WorkerAvailabe(props) {
 WorkerAvailabe.layout = Admin;
 
 export default  WorkerAvailabe;
+WorkerAvailabe.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

@@ -1,15 +1,16 @@
 import React,{useState} from 'react';
-
-
+import Router from "next/router"
+import 'tailwindcss/tailwind.css'
+import { autho } from '../../variables/logout';
 
  const Login = () => {
      const [message, setMessage] = useState('')
-    async function handleFormSubmit(e) {
+   function handleFormSubmit(e) {
         e.preventDefault();
 
         let email = e.target.elements.email?.value;
         let password = e.target.elements.password?.value;
-       const resp = await fetch('/api/admine/login', { 
+       fetch('/api/admine/login', { 
            method: 'POST',
            headers: {
                'Content-type' : 'application/json'
@@ -20,13 +21,27 @@ import React,{useState} from 'react';
            })
 
        } )
-       const json = await resp.json()
+       .then((res)=> res.json())
 
-        setMessage(json)
+        .then((data)=>{
+
+
+            console.log(data.message);
+        if(data.message=== 'welcome' ){
+            Router.replace("/admin/dashboard")
+          }
+       })
+    .catch((err)=>{
+            console.log(err)
+    })
+      
+
+  
+
     };
     return (
         
-        <div className='h-screen flex bg-gray-bg1'>
+        <div className='h-screen flex bg-gray-500'>
            
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
@@ -55,7 +70,8 @@ import React,{useState} from 'react';
 
                     <div className='flex justify-center items-center mt-6'>
                         <button
-                            className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
+                        
+                            className={`bg-green-500 py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
                         >
                             Login
                         </button>
@@ -67,3 +83,7 @@ import React,{useState} from 'react';
 };
 
 export default Login;
+Login.getInitialProps = async (ctx) =>{
+    const json = await autho( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

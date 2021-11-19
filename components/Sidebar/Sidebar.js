@@ -17,6 +17,7 @@ import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import styles from "assets/jss/nextjs-material-dashboard/components/sidebarStyle.js";
+import axios from "axios";
 
 export default function Sidebar(props) {
   // used for checking current route
@@ -24,13 +25,20 @@ export default function Sidebar(props) {
   // creates styles for this component
   const useStyles = makeStyles(styles);
   const classes = useStyles();
-  // verifies if routeName is the one active (in browser input)
+  var logout=()=>{
+    console.log('gg')
+   axios.post('../api/admine/logout')
+  .then((res)=>{console.log(res)})
+.catch((err)=>console.log(err)) }
   function activeRoute(routeName) {
     return router.route.indexOf(routeName) > -1 ? true : false;
   }
   const { color, logo, image, logoText, routes } = props;
+ 
   var links = (
+
     <List className={classes.list}>
+      
       {routes.map((prop, key) => {
         var activePro = " ";
         var listItemClasses;
@@ -76,10 +84,14 @@ export default function Sidebar(props) {
                   disableTypography={true}
                 />
               </ListItem>
+              
             </a>
           </Link>
+          
         );
       })}
+
+       <button   style={{opacity:0.2, textColor:"white",textAlign:"center" , marginLeft:40, width:200,height:50,textSizeAdjust:50}}  onClick={()=>{logout();router.push('admin/login')}}>Logout</button>
     </List>
   );
   var brand = (
@@ -168,5 +180,6 @@ Sidebar.propTypes = {
   image: PropTypes.string,
   logoText: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object),
+
   open: PropTypes.bool,
 };

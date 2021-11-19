@@ -14,7 +14,7 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
-
+import {MyGet} from "variables/MyGet"
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -44,12 +44,12 @@ const styles = {
     },
   },
 };
-
-
 function Userlist() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
   const[tab,setTab]=useState([])
+  
+
   useEffect(()=>{
     axios.get('/api/Users/findAllUsers')
     .then((res)=>{
@@ -57,7 +57,6 @@ function Userlist() {
       setTab(res.data)
     })
    },[])
-
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -71,15 +70,11 @@ function Userlist() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["name", "email", "phone","accepter"]}
-
+              tableHead={["name", "email", "phone"]}
               tableData={
                 Array.isArray(tab)? tab?.map((e)=>(
-                  
-                  [e.name, e.email, e.phone,<button  >Delete</button>]
-
+                  [e.name, e.email, e.phone]
                 )): null
-              
               }
             />
           </CardBody>
@@ -88,7 +83,9 @@ function Userlist() {
     </GridContainer>
   );
 }
-
 Userlist.layout = Admin;
-
 export default Userlist;
+Userlist.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

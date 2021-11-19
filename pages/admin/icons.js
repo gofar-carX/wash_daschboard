@@ -11,7 +11,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-
+import {MyGet} from "variables/MyGet"
 import styles from "assets/jss/nextjs-material-dashboard/views/iconsStyle.js";
 
 function Icons() {
@@ -68,3 +68,7 @@ function Icons() {
 Icons.layout = Admin;
 
 export default Icons;
+Icons.getInitialProps = async (ctx) =>{
+    const json = await MyGet( process.env.NEXT_PUBLIC_PATH + "/api/Workers/findallWorkers",ctx)
+  return {people : json}
+}

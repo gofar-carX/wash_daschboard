@@ -14,7 +14,7 @@ import axios from "axios";
 import { Button } from "@material-ui/core";
 import WorkerAvailabe from "./workersAvailable";
 import router from "next/router";
-import {MyGet} from "./MyGet"
+import {MyGet} from "variables/MyGet"
 
 
 
@@ -56,7 +56,7 @@ function TableList() {
   useEffect(()=>{
     axios.get('/api/Request/findAllRequest')
     .then((res)=>{
-      console.log(res.data)
+     
       setTab(res.data)
     })
    },[])
@@ -66,28 +66,28 @@ function TableList() {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>ALL Requests</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              All Request from Users
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","accepter"]}
+              tableHead={["service", "type of car", "type of wash", "payement","served","price","date","heure","Assign worker"]}
 
               tableData={
-                tab?.map((e)=>(
+                Array.isArray(tab)?  tab?.map((e)=>(
                   
                   [e.service, e.typeOfCar, e.typeOfWash, `${e.isPayed? e.isPayed: 0 }`,`${e.isServed}`,e.Price ,e.createdAt.slice(0,10),e.createdAt.slice(11,16),<button onClick={()=> { router.push({
                    pathname: './workersAvailable',
                    query : {Positiony : e.positiony,
                             Positionx: e.positionx ,
                             id: e.id            
-                   }
-                  })} } >accepter</button>]
+                   } 
+                  })} } >Assign</button>]
 
-                ))
+                )) : null
               
               }
             />
